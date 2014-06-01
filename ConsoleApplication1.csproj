@@ -8,8 +8,8 @@
     <ProjectGuid>{EE945DFB-A7C6-48B5-A3ED-9079C6FA71B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>GameFifteenProject</RootNamespace>
+    <AssemblyName>GameFifteenProject</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -50,9 +50,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Scoreboard.cs" />
     <Compile Include="Tile.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GameFifteenProject.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
