@@ -5,9 +5,6 @@ using System.Text;
 
 namespace GameFifteenProject
 {
-
-	// mnogo sym dobyr programist, u4astvam v TopCoder i sam purvi ot Sliven i regiona
-
     class Program
     {
         private static void Menu()
