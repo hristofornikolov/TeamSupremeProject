@@ -28,9 +28,9 @@
             set { this.moves = value; }
         }
 
-        public int CompareTo(Player player)
+        public int CompareTo(object player)
         {
-            Player currentPlayer = player;
+            Player currentPlayer = (Player)player;
             int result = this.Moves.CompareTo(currentPlayer.Moves);
             return result;
         }
