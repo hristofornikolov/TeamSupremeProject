@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameFifteenProject
 {
-    class Tile : IComparable
+    public class Tile : IComparable
     {
         private string label;
         private int position;
