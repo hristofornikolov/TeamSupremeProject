@@ -1,20 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿//-----------------------------------------------------------------------
+// <copyright file="Gameplay.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace GameFifteenProject
 {
-    static class Gameplay
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    /// <summary>
+    /// This is the movement logic arranged in the Gameplay class
+    /// </summary>
+    public static class Gameplay
     {
-
-        //private const int HORIZONTAL_NEIGHBOUR_TILE = 1;
-        //private const int VERTICAL_NEIGHBOUR_TILE = 4;
-        //private const int MATRIX_SIZE = 4;
-
+        /// <summary>
+        /// A constant to assist us in measuring the horizontal distance between two tiles
+        /// </summary>
         private const int HorizontalNeighbourTile = 1;
+
+        /// <summary>
+        /// A constant to assist us in measuring the vertical distance between two tiles
+        /// </summary>
         private const int VerticalNeighbourTile = 4;
+
+        /// <summary>
+        /// The predefined matrix size
+        /// </summary>
         private const int MatrixSize = 4;
 
+        /// <summary>
+        /// This is how we print the matrix
+        /// </summary>
+        /// <param name="sourceMatrix">This is the initial matrix (the matrix drawn before a move)</param>
         public static void PrintMatrix(List<Tile> sourceMatrix)
         {
             Console.WriteLine("  ------------");
@@ -24,11 +43,11 @@ namespace GameFifteenProject
             {
                 Tile currentElement = sourceMatrix.ElementAt(index);
                 
-                if (currentElement.Label == String.Empty)
+                if (currentElement.Label == string.Empty)
                 {
                     Console.Write("   ");
                 }
-                else if (Int32.Parse(currentElement.Label) < 10)
+                else if (int.Parse(currentElement.Label) < 10)
                 {
                     Console.Write(' ' + currentElement.Label + ' ');
                 }
@@ -46,6 +65,7 @@ namespace GameFifteenProject
                     {
                         Console.Write("| ");
                     }
+
                     rowCounter = 0;
                 }
             }
@@ -87,7 +107,7 @@ namespace GameFifteenProject
             foreach (Tile tile in tiles)
             {
                 int tileLabelInt = 0;
-                Int32.TryParse(tile.Label,out tileLabelInt);
+                int.TryParse(tile.Label, out tileLabelInt);
                 if (tileLabelInt == (tile.Position + 1))
                 {
                     count++;
@@ -110,12 +130,13 @@ namespace GameFifteenProject
             for (int index = 0; index < tiles.Count; index++)
             {
                 int parsedLabel = 0;
-                bool successfulParsing = Int32.TryParse(tiles[index].Label, out parsedLabel);
+                bool successfulParsing = int.TryParse(tiles[index].Label, out parsedLabel);
                 if (successfulParsing && tileValue == parsedLabel)
                 {
                     result = index;
                 }
             }
+
             return result;
         }
 
@@ -131,8 +152,8 @@ namespace GameFifteenProject
             int tilesDistance = freeTile.Position - tile.Position;
             int tilesAbsoluteDistance = Math.Abs(tilesDistance);
             bool isValidHorizontalNeighbour =
-                (tilesAbsoluteDistance == HorizontalNeighbourTile && !(((tile.Position + 1) % MatrixSize == 1 && tilesDistance == -1) || ((tile.Position + 1) % MatrixSize == 0 && tilesDistance == 1)));
-            bool isValidVerticalNeighbour = (tilesAbsoluteDistance == VerticalNeighbourTile);
+                tilesAbsoluteDistance == HorizontalNeighbourTile && !(((tile.Position + 1) % MatrixSize == 1 && tilesDistance == -1) || ((tile.Position + 1) % MatrixSize == 0 && tilesDistance == 1));
+            bool isValidVerticalNeighbour = tilesAbsoluteDistance == VerticalNeighbourTile;
             bool validNeigbour = isValidHorizontalNeighbour || isValidVerticalNeighbour;
 
             return validNeigbour;
@@ -143,14 +164,13 @@ namespace GameFifteenProject
             int result = 0;
             for (int index = 0; index < tiles.Count; index++)
             {
-                if (tiles[index].Label == String.Empty)
+                if (tiles[index].Label == string.Empty)
                 {
                     result = index;
                 }
             }
+
             return result;
         }
-
-
     }
 }
