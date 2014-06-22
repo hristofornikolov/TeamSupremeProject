@@ -52,6 +52,9 @@
     <Compile Include="Tile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Engine\" />
+    <Folder Include="GameObjects\" />
+    <Folder Include="Interfaces\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
