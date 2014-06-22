@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace GameFifteenProject
 {
     static class Gameplay
     {
 
-        private const int HORIZONTAL_NEIGHBOUR_TILE = 1;
-        private const int VERTICAL_NEIGHBOUR_TILE = 4;
-        private const int MATRIX_SIZE = 4;
+        //private const int HORIZONTAL_NEIGHBOUR_TILE = 1;
+        //private const int VERTICAL_NEIGHBOUR_TILE = 4;
+        //private const int MATRIX_SIZE = 4;
+
+        private const int HorizontalNeighbourTile = 1;
+        private const int VerticalNeighbourTile = 4;
+        private const int MatrixSize = 4;
 
         public static void PrintMatrix(List<Tile> sourceMatrix)
         {
@@ -61,7 +64,7 @@ namespace GameFifteenProject
             Tile freeTile = tiles[GetFreeTilePosition(tiles)];
             Tile tile = tiles[GetDestinationTilePosition(tiles, tileValue)];
 
-            bool areValidNeighbourTiles = TilePositionValidation(tiles, freeTile, tile);
+            bool areValidNeighbourTiles = TilePositionValidation(freeTile, tile);
 
             if (areValidNeighbourTiles)
             {
@@ -116,7 +119,7 @@ namespace GameFifteenProject
             return result;
         }
 
-        private static bool TilePositionValidation(List<Tile> tiles, Tile freeTile, Tile tile)
+        private static bool TilePositionValidation(Tile freeTile, Tile tile)
         {
             bool areValidNeighbourTiles = AreValidNeighbourTiles(freeTile, tile);
 
@@ -128,8 +131,8 @@ namespace GameFifteenProject
             int tilesDistance = freeTile.Position - tile.Position;
             int tilesAbsoluteDistance = Math.Abs(tilesDistance);
             bool isValidHorizontalNeighbour =
-                (tilesAbsoluteDistance == HORIZONTAL_NEIGHBOUR_TILE && !(((tile.Position + 1) % MATRIX_SIZE == 1 && tilesDistance == -1) || ((tile.Position + 1) % MATRIX_SIZE == 0 && tilesDistance == 1)));
-            bool isValidVerticalNeighbour = (tilesAbsoluteDistance == VERTICAL_NEIGHBOUR_TILE);
+                (tilesAbsoluteDistance == HorizontalNeighbourTile && !(((tile.Position + 1) % MatrixSize == 1 && tilesDistance == -1) || ((tile.Position + 1) % MatrixSize == 0 && tilesDistance == 1)));
+            bool isValidVerticalNeighbour = (tilesAbsoluteDistance == VerticalNeighbourTile);
             bool validNeigbour = isValidHorizontalNeighbour || isValidVerticalNeighbour;
 
             return validNeigbour;
