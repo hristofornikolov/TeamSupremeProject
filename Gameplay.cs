@@ -73,6 +73,12 @@ namespace GameFifteenProject
             Console.WriteLine("  ------------");
         }
 
+        /// <summary>
+        /// The tiles movement logic
+        /// </summary>
+        /// <param name="tiles">The input list of tiles</param>
+        /// <param name="tileValue">The tile to be moved</param>
+        /// <returns>The new matrix to be drawn</returns>
         public static List<Tile> MoveTiles(List<Tile> tiles, int tileValue)
         {
             if (tileValue < 0 || tileValue > 15)
@@ -101,6 +107,11 @@ namespace GameFifteenProject
             return resultMatrix;
         }
 
+        /// <summary>
+        /// A check whether the matrix is ordered and the game must end
+        /// </summary>
+        /// <param name="tiles">The list of tiles forming the matrix</param>
+        /// <returns>The result whether the game must end or not</returns>
         public static bool IsMatrixSolved(List<Tile> tiles)
         {
             int count = 0;
@@ -124,6 +135,12 @@ namespace GameFifteenProject
             }
         }
 
+        /// <summary>
+        /// Getting the new tile position
+        /// </summary>
+        /// <param name="tiles">The list of tiles forming the matrix</param>
+        /// <param name="tileValue">The tile to be moved</param>
+        /// <returns>The new index for the tile to be moved to</returns>
         private static int GetDestinationTilePosition(List<Tile> tiles, int tileValue)
         {
             int result = 0;
@@ -140,6 +157,12 @@ namespace GameFifteenProject
             return result;
         }
 
+        /// <summary>
+        /// Validation of the new tile position
+        /// </summary>
+        /// <param name="freeTile">The new tile position to be checked</param>
+        /// <param name="tile">The current tile we are comparing</param>
+        /// <returns>Valid or not</returns>
         private static bool TilePositionValidation(Tile freeTile, Tile tile)
         {
             bool areValidNeighbourTiles = AreValidNeighbourTiles(freeTile, tile);
@@ -147,6 +170,12 @@ namespace GameFifteenProject
             return areValidNeighbourTiles;
         }
 
+        /// <summary>
+        /// Validation of the neighboring tile
+        /// </summary>
+        /// <param name="freeTile">The new tile position to be checked</param>
+        /// <param name="tile">The current tile we are comparing</param>
+        /// <returns>Is neighbor valid or not</returns>
         private static bool AreValidNeighbourTiles(Tile freeTile, Tile tile)
         {
             int tilesDistance = freeTile.Position - tile.Position;
@@ -159,6 +188,11 @@ namespace GameFifteenProject
             return validNeigbour;
         }
 
+        /// <summary>
+        /// Getting the position of the free tile to which we move our tile
+        /// </summary>
+        /// <param name="tiles">The list of tiles forming the matrix</param>
+        /// <returns>The new position</returns>
         private static int GetFreeTilePosition(List<Tile> tiles)
         {
             int result = 0;
