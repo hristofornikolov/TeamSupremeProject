@@ -1,16 +1,30 @@
-﻿namespace GameFifteenProject
+﻿//-----------------------------------------------------------------------
+// <copyright file="Program.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteenProject
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// This is the engine of our game.
+    /// </summary>
     public class Program
     {
-        public static void Main(string[] args)
+        /// <summary>
+        /// This is how we start a game.
+        /// </summary>
+        public static void Main()
         {
             Menu();
         }
 
+        /// <summary>
+        /// This is the menu initialization.
+        /// </summary>
         private static void Menu()
         {
             List<Tile> tiles = new List<Tile>();
