@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameFifteenProject
+﻿namespace GameFifteenProject
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public class Program
     {
+        public static void Main(string[] args)
+        {
+            Menu();
+        }
+
         private static void Menu()
         {
             List<Tile> tiles = new List<Tile>();
@@ -33,12 +37,14 @@ namespace GameFifteenProject
                                 Gameplay.PrintMatrix(tiles);
                                 break;
                             }
+
                         case "top":
                             {
                                 Scoreboard.PrintScoreboard();
                                 break;
                             }
                     }
+
                     if (!flag)
                     {
                         Console.Write("Enter a number to move: ");
@@ -46,7 +52,7 @@ namespace GameFifteenProject
 
                         int destinationTileValue;
 
-                        bool isSuccessfulParsing = Int32.TryParse(s, out destinationTileValue);
+                        bool isSuccessfulParsing = int.TryParse(s, out destinationTileValue);
 
                         if (isSuccessfulParsing)
                         {
@@ -74,9 +80,6 @@ namespace GameFifteenProject
                             }
                         }
                     }
-
-
-
                 }
                 else
                 {
@@ -93,22 +96,12 @@ namespace GameFifteenProject
                         Scoreboard.AddPlayer(player);
                         Scoreboard.PrintScoreboard();
                     }
+
                     s = "restart";
                     flag = false;
                     cnt = 0;
-
-
-
                 }
-
             }
-        }
-
-        static void Main(string[] args)
-        {
-
-
-            Menu();
         }
     }
 }
