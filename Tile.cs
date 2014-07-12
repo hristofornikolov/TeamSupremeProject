@@ -55,11 +55,6 @@ namespace GameFifteenProject
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Tile label cannot be null or empty.");
-                }
-
                 this.label = value;
             }
         }
@@ -75,11 +70,6 @@ namespace GameFifteenProject
             }
             set 
             {
-                if (value < 0 || 15 < value)
-                {
-                    throw new ArgumentException();
-                }
-
                 this.position = value;
             }
         }
