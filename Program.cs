@@ -86,7 +86,7 @@ namespace GameFifteenProject
                         {
                             try
                             {
-                                input = Command.CommandType(input);
+                                input = Command.ValidateCommand(input);
                             }
                             catch (ArgumentException exception)
                             {

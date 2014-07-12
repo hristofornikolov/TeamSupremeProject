@@ -17,40 +17,20 @@ namespace GameFifteenProject
     public static class Command
     {
         /// <summary>
-        /// All possibilities for the commands
-        /// </summary>
-        private enum Commands 
-        { 
-            /// <summary>
-            /// Command for restarting the game
-            /// </summary>
-            restart,
-
-            /// <summary>
-            /// Command for showing the top players
-            /// </summary>
-            top,
-
-            /// <summary>
-            /// Command for exiting the game
-            /// </summary>
-            exit 
-        }
-
-        /// <summary>
         /// Method that takes the command from the user
         /// </summary>
         /// <param name="input">Command written by the user</param>
         /// <returns>The command if it is valid, 
         /// exception elsewhere</returns>
-        public static string CommandType(string input)
+        public static string ValidateCommand(string input)
         {
-            string inputToLower = input.ToLower();
             string output;
 
-            if (inputToLower == Commands.exit.ToString() || inputToLower == Commands.restart.ToString() || inputToLower == Commands.top.ToString())
+            if (input == CommandType.Exit.ToString() ||
+                input == CommandType.Restart.ToString() ||
+                input == CommandType.Top.ToString())
             {
-                output = inputToLower;
+                output = input.ToLower();
             }
             else
             {

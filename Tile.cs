@@ -40,7 +40,7 @@ namespace GameFifteenProject
         /// <param name="position">Showing the position of the tile</param>
         public Tile(string label, int position)
         {
-            this.label = label;
+            this.Label = label;
             this.position = position;
         }
 
@@ -49,7 +49,19 @@ namespace GameFifteenProject
         /// </summary>
         public string Label
         {
-            get { return this.label; }
+            get 
+            { 
+                return this.label;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Tile label cannot be null or empty.");
+                }
+
+                this.label = value;
+            }
         }
 
         /// <summary>
@@ -57,8 +69,19 @@ namespace GameFifteenProject
         /// </summary>
         public int Position
         {
-            get { return this.position; }
-            set { this.position = value; }
+            get 
+            { 
+                return this.position;
+            }
+            set 
+            {
+                if (value < 0 || 15 < value)
+                {
+                    throw new ArgumentException();
+                }
+
+                this.position = value;
+            }
         }
 
         /// <summary>
