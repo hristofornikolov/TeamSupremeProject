@@ -90,7 +90,7 @@ namespace GameFifteenProject
             Tile freeTile = tiles[GetFreeTilePosition(tiles)];
             Tile tile = tiles[GetDestinationTilePosition(tiles, tileValue)];
 
-            bool areValidNeighbourTiles = TilePositionValidation(freeTile, tile);
+            bool areValidNeighbourTiles = ValidateTilePosition(freeTile, tile);
 
             if (areValidNeighbourTiles)
             {
@@ -112,7 +112,7 @@ namespace GameFifteenProject
         /// </summary>
         /// <param name="tiles">The list of tiles forming the matrix</param>
         /// <returns>The result whether the game must end or not</returns>
-        public static bool IsMatrixSolved(List<Tile> tiles)
+        public static bool CheckWhetherMatrixIsSolved(List<Tile> tiles)
         {
             int count = 0;
             foreach (Tile tile in tiles)
@@ -163,9 +163,9 @@ namespace GameFifteenProject
         /// <param name="freeTile">The new tile position to be checked</param>
         /// <param name="tile">The current tile we are comparing</param>
         /// <returns>Valid or not</returns>
-        private static bool TilePositionValidation(Tile freeTile, Tile tile)
+        private static bool ValidateTilePosition(Tile freeTile, Tile tile)
         {
-            bool areValidNeighbourTiles = AreValidNeighbourTiles(freeTile, tile);
+            bool areValidNeighbourTiles = CheckNeighbourTilesValidity(freeTile, tile);
 
             return areValidNeighbourTiles;
         }
@@ -176,7 +176,7 @@ namespace GameFifteenProject
         /// <param name="freeTile">The new tile position to be checked</param>
         /// <param name="tile">The current tile we are comparing</param>
         /// <returns>Is neighbor valid or not</returns>
-        private static bool AreValidNeighbourTiles(Tile freeTile, Tile tile)
+        private static bool CheckNeighbourTilesValidity(Tile freeTile, Tile tile)
         {
             int tilesDistance = freeTile.Position - tile.Position;
             int tilesAbsoluteDistance = Math.Abs(tilesDistance);

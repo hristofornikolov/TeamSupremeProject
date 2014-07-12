@@ -47,7 +47,7 @@ namespace GameFifteenProject
                                 Console.WriteLine(welcomeMessage);
                                 tiles = MatrixGenerator.GenerateMatrix();
                                 tiles = MatrixGenerator.ShuffleMatrix(tiles);
-                                doesGameEnd = Gameplay.IsMatrixSolved(tiles);
+                                doesGameEnd = Gameplay.CheckWhetherMatrixIsSolved(tiles);
                                 Gameplay.PrintMatrix(tiles);
                                 break;
                             }
@@ -75,7 +75,7 @@ namespace GameFifteenProject
                                 Gameplay.MoveTiles(tiles, destinationTileValue);
                                 stepsCount++;
                                 Gameplay.PrintMatrix(tiles);
-                                doesGameEnd = Gameplay.IsMatrixSolved(tiles);
+                                doesGameEnd = Gameplay.CheckWhetherMatrixIsSolved(tiles);
                             }
                             catch (Exception exception)
                             {
