@@ -15,6 +15,7 @@ namespace GameFifteenProject.GameObjects
     public class Scoreboard
     {
         private const int TopPlayersCount = 3;
+
         /// <summary>
         /// List with all players
         /// </summary>

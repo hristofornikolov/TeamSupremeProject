@@ -10,14 +10,14 @@ namespace GameFifteenProject.GameObjects
 
     using System.Collections.Generic;
 
-    public class Field : IEnumerable<int>
+    public class FieldMatrix : IEnumerable<int>
     {
         private const int InitialRows = 4;
         private const int InitialColumns = 4;
 
         private int[,] matrix;
 
-        public Field()
+        public FieldMatrix()
         {
             this.matrix = new int[InitialRows, InitialColumns];
         }
@@ -122,7 +122,7 @@ namespace GameFifteenProject.GameObjects
             return this.GetEnumerator();
         }
 
-        public bool isSolved()
+        public bool CheckIfSolved()
         {
             int value = 1;
             for (int i = 0; i < this.Length; i++)

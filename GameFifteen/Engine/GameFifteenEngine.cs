@@ -23,7 +23,7 @@
         private static readonly int[] dirRow = { -1, 0, 1, 0 };
         private static readonly int[] dirColumn = { 0, 1, 0, -1 };
 
-        private readonly Field field;
+        private readonly FieldMatrix field;
         private readonly IRenderer renderer;
         private readonly Scoreboard scoreboard;
 
@@ -34,7 +34,7 @@
 
         private GameFifteenEngine()
         {
-            this.field = new Field();
+            this.field = new FieldMatrix();
             this.renderer = new ConsoleRenderer();
             this.scoreboard = new Scoreboard();
         }
@@ -61,7 +61,7 @@
                 this.RenderCommandResult(commandResult);
                 command = this.ReadCommand();
 
-                if (this.field.isSolved())
+                if (this.field.CheckIfSolved())
                 {
                     command = EndGame(command);
                 }
@@ -99,7 +99,7 @@
                     break;
             }
 
-            if (this.field.isSolved())
+            if (this.field.CheckIfSolved())
             {
                 commandResult.AppendFormat(WinMessage, this.movesCount);
                 commandResult.AppendLine();
@@ -202,7 +202,7 @@
                 MoveEmptyCell(newRowIndex, newColIndex);
             }
 
-            if (this.field.isSolved())
+            if (this.field.CheckIfSolved())
             {
                 RearrangeField();
             }
