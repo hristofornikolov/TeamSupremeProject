@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command.cs" />
-    <Compile Include="CommandType.cs" />
-    <Compile Include="Gameplay.cs" />
-    <Compile Include="MatrixGenerator.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Scoreboard.cs" />
-    <Compile Include="Tile.cs" />
+    <Compile Include="Contracts\Engine\ICommand.cs" />
+    <Compile Include="Contracts\Engine\IRenderer.cs" />
+    <Compile Include="Engine\Command.cs" />
+    <Compile Include="Engine\ConsoleRenderer.cs" />
+    <Compile Include="Engine\GameFifteenEngine.cs" />
+    <Compile Include="Engine\RandomNumberGenerator.cs" />
+    <Compile Include="GameObjects\Field.cs" />
+    <Compile Include="Contracts\Engine\IRandomNumberGenerator.cs" />
+    <Compile Include="GameObjects\Player.cs" />
+    <Compile Include="GameFifteenProgram.cs" />
+    <Compile Include="GameObjects\Scoreboard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Engine\" />
-    <Folder Include="GameObjects\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
