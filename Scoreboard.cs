@@ -18,7 +18,7 @@ namespace GameFifteenProject
         /// <summary>
         /// List with all players
         /// </summary>
-        private static List<Player> Players = new List<Player>();
+        private static readonly List<Player> Players = new List<Player>();
 
         /// <summary>
         /// Method to add players
@@ -27,8 +27,7 @@ namespace GameFifteenProject
         public static void AddPlayer(Player player)
         {
             Players.Add(player);
-            //Players.Sort();
-            Players = Players.OrderBy(p => p.Moves).ToList();
+            Players.Sort();
             DeleteAllExceptTopPlayers();
         }
         
