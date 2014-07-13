@@ -53,22 +53,99 @@ namespace GameFifteenProject
         /// <returns>
         /// List of Tile objects
         /// </returns>
-        public static List<Tile> GenerateMatrix()
+        ///
+
+        public static int emptyRow = 3;
+        public static int emptyCol = 3;
+
+        public static int[] dirR = new int[4] { -1, 0, 1, 0 };
+        public static int[] dirC = new int[4] { 0, 1, 0, -1 };
+
+        public static Random r = new Random();
+        public static int[,] sol = new int[MatrixSize, MatrixSize] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, 
+                                                                     { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+        public static int[,] currentMatrix = new int[MatrixSize, MatrixSize];
+
+        public static int[,] GenerateMatrix()
         {
-            List<Tile> tiles = new List<Tile>();
-
-            for (int index = 0; index < 15; index++)
+            int value = 1;
+            for (int i = 0; i < MatrixSize; i++)
             {
-                string tileName = (index + 1).ToString();
-
-                Tile tempTile = new Tile(tileName, index);
-                tiles.Add(tempTile);
+                for (int j = 0; j < MatrixSize; j++)
+                {
+                    currentMatrix[i, j] = value;
+                    value++;
+                }
+            }
+            int randomMove = r.Next(40, 50);
+            for (int i = 0; i < randomMove; i++)
+            {
+                int randomDirection = r.Next(4);
+                int newRow = emptyRow + dirR[randomDirection];
+                int newCol = emptyCol + dirC[randomDirection];
+                if (IfOutOfMAtrix(newRow, newCol))
+                {
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    MoveEmptyCell(newRow, newCol);
+                }
+            }
+            if (IfEqualMatrix())
+            {
+                GenerateMatrix();
             }
 
-            Tile emptyTile = new Tile(string.Empty, 15);
-            tiles.Add(emptyTile);
+            return currentMatrix;
+            //List<Tile> tiles = new List<Tile>();
 
-            return tiles;
+            //for (int index = 0; index < 15; index++)
+            //{
+            //    string tileName = (index + 1).ToString();
+
+            //    Tile tempTile = new Tile(tileName, index);
+            //    tiles.Add(tempTile);
+            //}
+
+            //Tile emptyTile = new Tile(string.Empty, 15);
+            //tiles.Add(emptyTile);
+
+            //return tiles;
+        }
+
+        private static bool IfEqualMatrix()
+        {
+            for (int i = 0; i < MatrixSize; i++)
+            {
+                for (int j = 0; j < MatrixSize; j++)
+                {
+                    if (currentMatrix[i, j] != sol[i, j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        public static bool IfOutOfMAtrix(int row, int col)
+        {
+            if (row >= MatrixSize || row < 0 || col < 0 || col >= MatrixSize)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static void MoveEmptyCell(int newRow, int newCol)
+        {
+            int swapValue = currentMatrix[newRow, newCol];
+            currentMatrix[newRow, newCol] = 16;
+            currentMatrix[emptyRow, emptyCol] = swapValue;
+            emptyRow = newRow;
+            emptyCol = newCol;
         }
 
         /// <summary>

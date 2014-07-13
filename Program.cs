@@ -27,7 +27,7 @@ namespace GameFifteenProject
         /// </summary>
         private static void Menu()
         {
-            List<Tile> tiles = new List<Tile>();
+            int[,] tiles = new int[4,4];
             int stepsCount = 0;
             string input = "restart";
             bool doesGameEnd = false;
@@ -46,7 +46,7 @@ namespace GameFifteenProject
                                 Console.WriteLine();
                                 Console.WriteLine(welcomeMessage);
                                 tiles = MatrixGenerator.GenerateMatrix();
-                                tiles = MatrixGenerator.ShuffleMatrix(tiles);
+                                //tiles = MatrixGenerator.ShuffleMatrix(tiles);
                                 doesGameEnd = Gameplay.CheckWhetherMatrixIsSolved(tiles);
                                 Gameplay.PrintMatrix(tiles);
                                 break;

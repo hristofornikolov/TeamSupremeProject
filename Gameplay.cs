@@ -34,77 +34,109 @@ namespace GameFifteenProject
         /// This is how we print the matrix
         /// </summary>
         /// <param name="sourceMatrix">This is the initial matrix (the matrix drawn before a move)</param>
-        public static void PrintMatrix(List<Tile> sourceMatrix)
+        public static void PrintMatrix(int[,] sourceMatrix)
         {
-            Console.WriteLine("  ------------");
-            Console.Write("| ");
-            int rowCounter = 0;
-            for (int index = 0; index < 16; index++)
+            Console.WriteLine(" -------------");
+            for (int i = 0; i < 4; i++)
             {
-                Tile currentElement = sourceMatrix.ElementAt(index);
-                
-                if (currentElement.Label == string.Empty)
+                Console.Write("|");
+                for (int j = 0; j < 4; j++)
                 {
-                    Console.Write("   ");
-                }
-                else if (int.Parse(currentElement.Label) < 10)
-                {
-                    Console.Write(' ' + currentElement.Label + ' ');
-                }
-                else
-                {
-                    Console.Write(currentElement.Label + ' ');
-                }
-
-                rowCounter++;
-                if (rowCounter == 4)
-                {
-                    Console.Write(" |");
-                    Console.WriteLine();
-                    if (index < 12)
+                    if (sourceMatrix[i, j] <= 9)
                     {
-                        Console.Write("| ");
+                        Console.Write("  {0}", sourceMatrix[i, j]);
                     }
 
-                    rowCounter = 0;
+
+
+                    else
+                    {
+                        if (sourceMatrix[i, j] == 16)
+                        {
+                            Console.Write("   ");
+                        }
+                        else
+                        {
+                            Console.Write(" {0}", sourceMatrix[i, j]);
+                        }
+                    }
+                    if (j == 4 - 1)
+                    {
+
+
+
+                        Console.Write(" |\n");
+                    }
                 }
             }
-
-            Console.WriteLine("  ------------");
+            Console.WriteLine(" -------------");
         }
 
         /// <summary>
         /// The tiles movement logic
         /// </summary>
         /// <param name="tiles">The input list of tiles</param>
-        /// <param name="tileValue">The tile to be moved</param>
+        /// <param name="number">The tile to be moved</param>
         /// <returns>The new matrix to be drawn</returns>
-        public static List<Tile> MoveTiles(List<Tile> tiles, int tileValue)
+        public static int[,] MoveTiles(int[,] tiles, int number)
         {
-            if (tileValue < 0 || tileValue > 15)
+            var resultMatrix = new int[4,4];
+            if (number < 0 || number > 15)
             {
                 throw new ArgumentException("Invalid move!");
             }
 
-            List<Tile> resultMatrix = tiles;
-            Tile freeTile = tiles[GetFreeTilePosition(tiles)];
-            Tile tile = tiles[GetDestinationTilePosition(tiles, tileValue)];
-
-            bool areValidNeighbourTiles = ValidateTilePosition(freeTile, tile);
-
-            if (areValidNeighbourTiles)
+            bool isValid = false;
+            int newRow = 0;
+            int newCol = 0;
+            for (int i = 0; i < 4; i++)
             {
-                int targetTilePosition = tile.Position;
-                resultMatrix[targetTilePosition].Position = freeTile.Position;
-                resultMatrix[freeTile.Position].Position = targetTilePosition;
-                resultMatrix.Sort();
+                newRow = MatrixGenerator.emptyRow + MatrixGenerator.dirR[i];
+                newCol = MatrixGenerator.emptyCol + MatrixGenerator.dirC[i];
+                if (MatrixGenerator.IfOutOfMAtrix(newRow, newCol))
+                {
+                    continue;
+                }
+                if (MatrixGenerator.currentMatrix[newRow, newCol] == number)
+                {
+                    isValid = true;
+                    MatrixGenerator.MoveEmptyCell(newRow, newCol);
+                    //steps++;
+                    resultMatrix = MatrixGenerator.currentMatrix;
+                    break;
+                }
+                if (i == 3)
+                {
+                    isValid = false;
+                }
             }
-            else
+
+
+            if (!isValid)
             {
-                throw new Exception("Invalid move!");
+                Console.WriteLine("Invalid move");
             }
 
             return resultMatrix;
+
+            //int[,] resultMatrix = tiles;
+            //Tile freeTile = tiles[GetFreeTilePosition(tiles)];
+            //Tile tile = tiles[GetDestinationTilePosition(tiles, number)];
+
+            //bool areValidNeighbourTiles = ValidateTilePosition(freeTile, tile);
+
+            //if (areValidNeighbourTiles)
+            //{
+            //    int targetTilePosition = tile.Position;
+            //    resultMatrix[targetTilePosition].Position = freeTile.Position;
+            //    resultMatrix[freeTile.Position].Position = targetTilePosition;
+            //    resultMatrix.Sort();
+            //}
+            //else
+            //{
+            //    throw new Exception("Invalid move!");
+            //}
+
         }
 
         /// <summary>
@@ -112,27 +144,23 @@ namespace GameFifteenProject
         /// </summary>
         /// <param name="tiles">The list of tiles forming the matrix</param>
         /// <returns>The result whether the game must end or not</returns>
-        public static bool CheckWhetherMatrixIsSolved(List<Tile> tiles)
+        public static bool CheckWhetherMatrixIsSolved(int[,] tiles)
         {
-            int count = 0;
-            foreach (Tile tile in tiles)
+            int count = 1;
+
+            for (int i = 0; i < tiles.GetLength(0); i++)
             {
-                int tileLabelInt = 0;
-                int.TryParse(tile.Label, out tileLabelInt);
-                if (tileLabelInt == (tile.Position + 1))
+                for (int j = 0; j < tiles.GetLength(1); j++)
                 {
+                    if (tiles[i, j] != count)
+                    {
+                        return false;
+                    }
                     count++;
                 }
             }
 
-            if (count == 15)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
 
         /// <summary>
