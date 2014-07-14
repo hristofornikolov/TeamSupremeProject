@@ -5,31 +5,21 @@
 //-----------------------------------------------------------------------
 
 namespace GameFifteenProject.GameObjects
-{
-    using GameFifteenProject.Engine;
-
+{   
+    using System.Collections;
     using System.Collections.Generic;
+
+    using GameFifteenProject.Engine;
 
     public class FieldMatrix : IEnumerable<int>
     {
-        private int[,] matrix;
+        private readonly int[,] matrix;
 
         public FieldMatrix()
         {
             this.matrix = new int[GameFifteenConstants.FieldInitialRows, GameFifteenConstants.FieldInitialColumns];
         }
-
-        public void Initialize()
-        {
-
-            int fillValue = 1;
-            for (int i = 0; i < this.Length; i++)
-            {
-                this[i] = fillValue;
-                fillValue++;
-            }
-        }
-
+        
         public int Rows
         {
             get { return GameFifteenConstants.FieldInitialRows; }
@@ -114,25 +104,9 @@ namespace GameFifteenProject.GameObjects
             }
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
-        }
-
-        public bool CheckIfSolved()
-        {
-            int value = 1;
-            for (int i = 0; i < this.Length; i++)
-            {
-                if (this[i] != value)
-                {
-                    return false;
-                }
-
-                value++;
-            }
-
-            return true;
-        }
+        }       
     }
 }

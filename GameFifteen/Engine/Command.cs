@@ -13,7 +13,7 @@ namespace GameFifteenProject.Engine
     /// </summary>
     public class Command : ICommand
     {
-        private string name;
+        private readonly string name;
 
         private Command(string name)
         {

@@ -4,15 +4,16 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using GameFifteenProject.Engine;
+
 namespace GameFifteenProject.GameObjects
 {
+    using GameFifteenProject.Engine;
+
     /// <summary>
     /// Class with information about the player
     /// </summary>
     public class Player
     {
-
         private string name;
 
         /// <summary>

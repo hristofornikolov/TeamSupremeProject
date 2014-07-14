@@ -6,10 +6,10 @@
 
 namespace GameFifteenProject.GameObjects
 {
-    using GameFifteenProject.Engine;
-
     using System.Collections.Generic;
     using System.Linq;
+
+    using GameFifteenProject.Engine;
 
     /// <summary>
     /// Display the scoreboard

@@ -1,10 +1,10 @@
 ﻿namespace GameFifteenProject.Engine
 {
+    using System.Text;
+
     using GameFifteenProject.Contracts.Engine;
     using GameFifteenProject.Extensions;
-    using GameFifteenProject.GameObjects;
-
-    using System.Text;
+    using GameFifteenProject.GameObjects;    
 
     public sealed class GameFifteenEngine
     {
@@ -52,7 +52,7 @@
                 this.RenderCommandResult(commandResult);
                 command = this.ReadCommand();
 
-                if (this.field.CheckIfSolved())
+                if (this.CheckIfFieldIsSolved())
                 {
                     command = EndGame(command);
                 }
@@ -90,7 +90,7 @@
                     break;
             }
 
-            if (this.field.CheckIfSolved())
+            if (this.CheckIfFieldIsSolved())
             {
                 commandResult.AppendFormat(GameFifteenConstants.WinMessage, this.movesCount);
                 commandResult.AppendLine();
@@ -111,7 +111,7 @@
             this.emptyCellValue = this.field.Rows * this.field.Columns;
             this.movesCount = 0;
 
-            this.field.Initialize();
+            this.InitializeField();
             this.RearrangeField();
         }
 
@@ -194,7 +194,7 @@
                 MoveEmptyCell(newRowIndex, newColIndex);
             }
 
-            if (this.field.CheckIfSolved())
+            if (this.CheckIfFieldIsSolved())
             {
                 RearrangeField();
             }
@@ -274,6 +274,32 @@
         private void SavePlayerScore(Player player)
         {
             this.scoreboard.AddPlayer(player);
+        }
+
+        private bool CheckIfFieldIsSolved()
+        {
+            int firstCellValue = 1;
+
+            foreach (var num in this.field)
+            {
+                if (num != firstCellValue)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void InitializeField()
+        {
+            int fillValue = 1;
+
+            for (int i = 0; i < this.field.Length; i++)
+            {
+                this.field[i] = fillValue;
+                fillValue++;
+            }
         }
     }
 }
