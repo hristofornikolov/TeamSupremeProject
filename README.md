@@ -38,7 +38,13 @@ Tile - Tsvetan
 
 Meeting 20140714 Summary:
 Refactoring done
+
+
 Design Patterns implemented so far:
+
 Singleton Pattern
+
 Command Pattern
+
+Facade Pattern
 
