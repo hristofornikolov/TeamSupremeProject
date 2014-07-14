@@ -35,3 +35,10 @@ Tile - Tsvetan
 
 22.6.2014 Николай: Форматиран е класът MatrixGenerator така, че да няма грешки в него според StyleCop. 
 12.7.2014 Николай: Форматирани са класовете Tile и Command така, че да няма грешки в тях според StyleCop. 
+
+Meeting 20140714 Summary:
+Refactoring done
+Design Patterns implemented so far:
+Singleton Pattern
+Command Pattern
+
