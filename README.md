@@ -56,7 +56,7 @@ Behavioral Patterns
 
 Structural Patterns
 
-1)Facade Pattern
+1) Facade Pattern
 
 2)
 
