@@ -9,8 +9,8 @@
         public const string WinMessage = "Well done! You won the game in {0} moves.";
 
         // 1, 1 is for testing
-        public const int FieldMinimumShuffles = 1;
-        public const int FieldMaximumShuffles = 1; 
+        public const int FieldMinimumShuffles = 2;
+        public const int FieldMaximumShuffles = 2; 
         public const int FieldInitialRows = 4;
         public const int FieldInitialColumns = 4;
 

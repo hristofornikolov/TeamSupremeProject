@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Contracts\Engine\ICommand.cs" />
     <Compile Include="Contracts\Engine\IRenderer.cs" />
+    <Compile Include="Contracts\IScoreboard.cs" />
     <Compile Include="Engine\Command.cs" />
     <Compile Include="Engine\ConsoleRenderer.cs" />
     <Compile Include="Engine\GameFifteenConstants.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="GameObjects\Player.cs" />
     <Compile Include="GameFifteenProgram.cs" />
     <Compile Include="GameObjects\Scoreboard.cs" />
+    <Compile Include="GameObjects\ScoreboardProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

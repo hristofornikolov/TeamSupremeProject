@@ -10,11 +10,12 @@ namespace GameFifteenProject.GameObjects
     using System.Linq;
 
     using GameFifteenProject.Engine;
+    using GameFifteenProject.Contracts;
 
     /// <summary>
     /// Display the scoreboard
     /// </summary>
-    public class Scoreboard
+    public class Scoreboard : IScoreboard
     {
 
         /// <summary>
@@ -34,11 +35,6 @@ namespace GameFifteenProject.GameObjects
         public void AddPlayer(Player player)
         {
             players.Add(player);
-
-            if (players.Count > GameFifteenConstants.ScoreboardTopPlayersCount)
-            {
-                RemoveWorstPlayer();
-            }
         }
 
         /// <summary>
@@ -49,22 +45,8 @@ namespace GameFifteenProject.GameObjects
         {
             get
             {
-                return players
-                    .OrderBy(p => p.Moves)
-                    .ToList();
+                return players;
             }
-        }
-
-        /// <summary>
-        /// Method which removes the worst player
-        /// </summary>
-        private static void RemoveWorstPlayer()
-        {
-            var worstPlayer = players
-                .OrderByDescending(p => p.Moves)
-                .First();
-
-            players.Remove(worstPlayer);
         }
     }
 }
