@@ -37,14 +37,27 @@ Tile - Tsvetan
 12.7.2014 Николай: Форматирани са класовете Tile и Command така, че да няма грешки в тях според StyleCop. 
 
 Meeting 20140714 Summary:
-Refactoring done
 
+Refactoring done
 
 Design Patterns implemented so far:
 
-Singleton Pattern
+Creational Patterns:
 
-Command Pattern
+1) Singleton Pattern
 
-Facade Pattern
+2) 
+
+Behavioral Patterns 
+
+1) Command Pattern
+
+2)
+
+Structural Patterns
+
+1)Facade Pattern
+
+2)
+
 
