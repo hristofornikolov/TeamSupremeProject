@@ -40,7 +40,7 @@ Meeting 20140714 Summary:
 
 Refactoring done
 
-Design Patterns implemented so far:
+Design Patterns implemented so far (20140714-2100):
 
 Creational Patterns:
 
@@ -52,12 +52,12 @@ Behavioral Patterns
 
 1) Command Pattern
 
-2)
+2) 
 
 Structural Patterns
 
 1) Facade Pattern
 
-2)
+2) Proxy Pattern
 
 
