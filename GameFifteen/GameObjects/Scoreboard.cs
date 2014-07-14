@@ -6,6 +6,8 @@
 
 namespace GameFifteenProject.GameObjects
 {
+    using GameFifteenProject.Engine;
+
     using System.Collections.Generic;
     using System.Linq;
 
@@ -14,7 +16,6 @@ namespace GameFifteenProject.GameObjects
     /// </summary>
     public class Scoreboard
     {
-        private const int TopPlayersCount = 3;
 
         /// <summary>
         /// List with all players
@@ -34,7 +35,7 @@ namespace GameFifteenProject.GameObjects
         {
             players.Add(player);
 
-            if (players.Count > TopPlayersCount)
+            if (players.Count > GameFifteenConstants.ScoreboardTopPlayersCount)
             {
                 RemoveWorstPlayer();
             }

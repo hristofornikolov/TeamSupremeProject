@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using GameFifteenProject.Engine;
 namespace GameFifteenProject.GameObjects
 {
     /// <summary>
@@ -11,7 +12,6 @@ namespace GameFifteenProject.GameObjects
     /// </summary>
     public class Player
     {
-        private const string UnknownName = "Unknown";
 
         private string name;
 
@@ -39,7 +39,7 @@ namespace GameFifteenProject.GameObjects
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    value = "Unknown";
+                    value = GameFifteenConstants.PlayerUnknownName;
                 }
 
                 this.name = value;

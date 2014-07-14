@@ -12,14 +12,11 @@ namespace GameFifteenProject.GameObjects
 
     public class FieldMatrix : IEnumerable<int>
     {
-        private const int InitialRows = 4;
-        private const int InitialColumns = 4;
-
         private int[,] matrix;
 
         public FieldMatrix()
         {
-            this.matrix = new int[InitialRows, InitialColumns];
+            this.matrix = new int[GameFifteenConstants.FieldInitialRows, GameFifteenConstants.FieldInitialColumns];
         }
 
         public void Initialize()
@@ -35,12 +32,12 @@ namespace GameFifteenProject.GameObjects
 
         public int Rows
         {
-            get { return InitialRows; }
+            get { return GameFifteenConstants.FieldInitialRows; }
         }
 
         public int Columns
         {
-            get { return InitialColumns; }
+            get { return GameFifteenConstants.FieldInitialColumns; }
         }
 
         public int Length
@@ -56,9 +53,9 @@ namespace GameFifteenProject.GameObjects
                 bool isMatch = false;
 
                 int currentIndex = 0;
-                for (int i = 0; i < InitialRows; i++)
+                for (int i = 0; i < GameFifteenConstants.FieldInitialRows; i++)
                 {
-                    for (int j = 0; j < InitialColumns; j++)
+                    for (int j = 0; j < GameFifteenConstants.FieldInitialColumns; j++)
                     {
                         if (currentIndex == index)
                         {
@@ -81,9 +78,9 @@ namespace GameFifteenProject.GameObjects
             set
             {
                 int currentIndex = 0;
-                for (int i = 0; i < InitialRows; i++)
+                for (int i = 0; i < GameFifteenConstants.FieldInitialRows; i++)
                 {
-                    for (int j = 0; j < InitialColumns; j++)
+                    for (int j = 0; j < GameFifteenConstants.FieldInitialColumns; j++)
                     {
                         if (currentIndex == index)
                         {

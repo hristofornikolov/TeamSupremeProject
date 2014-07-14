@@ -8,15 +8,6 @@
 
     public sealed class GameFifteenEngine
     {
-        private const string AskNameMessage = "Please enter your name for the scoreboard: ";
-        private const string AskNumberMessage = "Enter a number to move: ";
-        private const string InvalidCommandMessage = "Invalid move or command.";
-        private const string WinMessage = "Well done! You won the game in {0} moves.";
-
-        // 1, 1 is for testing
-        private const int MinimumShuffles = 1;  
-        private const int MaximumShuffles = 1; 
-
         private static GameFifteenEngine instance;
 
         // All possible directions for moving the cells
@@ -54,7 +45,7 @@
 
         public void Start()
         {
-            ICommand command = Command.Parse("start");
+            ICommand command = Command.Parse("restart");
             while (command.Name != "exit")
             {
                 string commandResult = this.ProcessCommand(command);
@@ -82,7 +73,7 @@
             var action = command.Name.ToLower();
             switch (action)
             {
-                case "start":
+                case "restart":
                     this.Initialize();
                     commandResult.AppendLine();
                     commandResult.AppendLine(this.ShowStartScreen());
@@ -91,7 +82,7 @@
                 case "exit":
                     commandResult.AppendLine(command.Name);
                     break;
-                case "scoreboard":
+                case "top":
                     commandResult.AppendLine(this.ShowScoreboard());
                     break;
                 default:
@@ -101,13 +92,13 @@
 
             if (this.field.CheckIfSolved())
             {
-                commandResult.AppendFormat(WinMessage, this.movesCount);
+                commandResult.AppendFormat(GameFifteenConstants.WinMessage, this.movesCount);
                 commandResult.AppendLine();
-                commandResult.Append(AskNameMessage);
+                commandResult.Append(GameFifteenConstants.AskNameMessage);
             }
             else
             {
-                commandResult.Append(AskNumberMessage);
+                commandResult.Append(GameFifteenConstants.AskNumberMessage);
             }
 
             return commandResult.ToString();
@@ -129,8 +120,8 @@
             var output = new StringBuilder();
             output.AppendLine("Welcome to the game “15”. Please try to arrange the numbers sequentially.");
             output.AppendLine("You can the following commands:");
-            output.AppendLine("'start' -> to start a new game.");
-            output.AppendLine("'scoreboard' -> to view the scoreboard.");
+            output.AppendLine("'restart' -> to start a new game.");
+            output.AppendLine("'top' -> to view the scoreboard.");
             output.AppendLine("'exit' -> to quit the game.");
 
             return output.ToString();
@@ -177,22 +168,23 @@
         private ICommand EndGame(ICommand command)
         {
             string playerName = command.Name;
-            this.savePlayerScore(new Player(playerName, this.movesCount));
+            this.SavePlayerScore(new Player(playerName, this.movesCount));
 
-            command = Command.Parse("start");
+            command = Command.Parse("restart");
             return command;
         }
 
         private void RearrangeField()
         {
-            int shuffles = RandomNumberGenerator.Next(MinimumShuffles, MaximumShuffles);
+            int shuffles = RandomNumberGenerator.Next(
+                GameFifteenConstants.FieldMinimumShuffles, GameFifteenConstants.FieldMaximumShuffles);
             for (int i = 0; i < shuffles; i++)
             {
                 int randomDirectionIndex = RandomNumberGenerator.Next(dirRow.Length - 1);
                 int newRowIndex = this.emptyCellRow + dirRow[randomDirectionIndex];
                 int newColIndex = this.emptyCellColumn + dirColumn[randomDirectionIndex];
 
-                if (!isInside(newRowIndex, newColIndex))
+                if (!IsInside(newRowIndex, newColIndex))
                 {
                     // step back
                     i--;
@@ -208,7 +200,7 @@
             }
         }
 
-        private bool isInside(int row, int col)
+        private bool IsInside(int row, int col)
         {
             return 0 <= row && row < this.field.Rows &&
                 0 <= col && col < this.field.Columns;
@@ -241,7 +233,7 @@
                     nextRow = this.emptyCellRow + dirRow[i];
                     nextCol = this.emptyCellColumn + dirColumn[i];
 
-                    if (isInside(nextRow, nextCol) &&
+                    if (IsInside(nextRow, nextCol) &&
                         this.field[nextRow, nextCol] == number)
                     {
                         this.MoveEmptyCell(nextRow, nextCol);
@@ -258,7 +250,7 @@
             }
             else
             {
-                result.AppendLine(InvalidCommandMessage);
+                result.AppendLine(GameFifteenConstants.InvalidCommandMessage);
             }
 
             return result.ToString();
@@ -279,7 +271,7 @@
             return output.ToString();
         }
 
-        private void savePlayerScore(Player player)
+        private void SavePlayerScore(Player player)
         {
             this.scoreboard.AddPlayer(player);
         }

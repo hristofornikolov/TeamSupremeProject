@@ -47,6 +47,7 @@
     <Compile Include="Contracts\Engine\IRenderer.cs" />
     <Compile Include="Engine\Command.cs" />
     <Compile Include="Engine\ConsoleRenderer.cs" />
+    <Compile Include="Engine\GameFifteenConstants.cs" />
     <Compile Include="Engine\GameFifteenEngine.cs" />
     <Compile Include="Extensions\RandomNumberGenerator.cs" />
     <Compile Include="GameObjects\FieldMatrix.cs" />
@@ -57,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="UnitTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
