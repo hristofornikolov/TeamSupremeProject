@@ -27,6 +27,9 @@
         private int emptyCellValue;
         private int movesCount;
 
+        /// <summary>
+        /// The game engine constructor
+        /// </summary>
         private GameFifteenEngine()
         {
             this.field = new FieldMatrix();
@@ -35,6 +38,9 @@
             this.randomNumberGenerator = new RandomNumberGenerator();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the game in case it has not been initialized.
+        /// </summary>
         public static GameFifteenEngine Instance
         {
             get
@@ -48,6 +54,9 @@
             }
         }
 
+        /// <summary>
+        /// Restarts the game when the right command has been typed by the user.
+        /// </summary>
         public void Start()
         {
             ICommand command = Command.Parse("restart");
@@ -64,6 +73,10 @@
             }
         }
 
+        /// <summary>
+        /// Reads the command input
+        /// </summary>
+        /// <returns>The command that corresponds to the input provided.</returns>
         private ICommand ReadCommand()
         {
             var input = this.renderer.Input();
@@ -71,7 +84,12 @@
 
             return command;
         }
-
+        
+        /// <summary>
+        /// Command processor based on the input provided by the user.
+        /// </summary>
+        /// <param name="command">User input</param>
+        /// <returns>The desired command in a string form</returns>
         private string ProcessCommand(ICommand command)
         {
             StringBuilder commandResult = new StringBuilder();
@@ -109,6 +127,9 @@
             return commandResult.ToString();
         }
 
+        /// <summary>
+        /// Initializes the matrix and prepares it for the game by rearranging the field.
+        /// </summary>
         private void Initialize()
         {
             this.emptyCellRow = this.field.Rows - 1;
@@ -120,6 +141,10 @@
             this.RearrangeField();
         }
 
+        /// <summary>
+        /// Draws/writes the starting screen description message.
+        /// </summary>
+        /// <returns>All the text of the starting screen</returns>
         private string ShowStartScreen()
         {
             var output = new StringBuilder();
@@ -132,6 +157,10 @@
             return output.ToString();
         }
 
+        /// <summary>
+        /// Draws/writes the matrix itself.
+        /// </summary>
+        /// <returns>The matrix as a string</returns>
         private string ShowField()
         {
             var output = new StringBuilder();
@@ -165,11 +194,20 @@
             return output.ToString();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="output"></param>
         private void RenderCommandResult(string output)
         {
             this.renderer.Output(output);
         }
 
+        /// <summary>
+        /// Ends the game by saving the player's score and creating a new Player instance
+        /// </summary>
+        /// <param name="command">Input command</param>
+        /// <returns>The desired command</returns>
         private ICommand EndGame(ICommand command)
         {
             string playerName = command.Name;
@@ -179,6 +217,9 @@
             return command;
         }
 
+        /// <summary>
+        /// Randomly rearranges the field to prepare it for the game start.
+        /// </summary>
         private void RearrangeField()
         {
             int shuffles = this.randomNumberGenerator.Next(
@@ -205,12 +246,23 @@
             }
         }
 
+        /// <summary>
+        /// Checks whether the number input by the user is inside the matrix by its coordinates.
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
         private bool IsInside(int row, int col)
         {
             return 0 <= row && row < this.field.Rows &&
                    0 <= col && col < this.field.Columns;
         }
 
+        /// <summary>
+        /// Moves the empty cell according to the number command provided by the user.
+        /// </summary>
+        /// <param name="newRow">Cell row</param>
+        /// <param name="newCol">Cell column</param>
         private void MoveEmptyCell(int newRow, int newCol)
         {
             int swapValue = this.field[newRow, newCol];
@@ -221,18 +273,24 @@
             this.emptyCellColumn = newCol;
         }
 
+        /// <summary>
+        /// Moves the number provided by the command t othe empty cell.
+        /// </summary>
+        /// <param name="destinationValue">Destination cell</param>
+        /// <returns>The redrawn matrix as a string</returns>
         private string Move(string destinationValue)
         {
             var result = new StringBuilder();
             bool isDestinationValid = false;
-
             int number;
+
             if (int.TryParse(destinationValue, out number) &&
                 number >= 1 &&
                 number < this.emptyCellValue)
             {
                 int nextRow = 0;
                 int nextCol = 0;
+
                 for (int i = 0; i < dirRow.Length; i++)
                 {
                     nextRow = this.emptyCellRow + dirRow[i];
@@ -261,6 +319,10 @@
             return result.ToString();
         }
 
+        /// <summary>
+        /// Creates the scoreboard and shows it upon game end.
+        /// </summary>
+        /// <returns>The scoreboard as a string</returns>
         private string ShowScoreboard()
         {
             var output = new StringBuilder();
@@ -277,11 +339,19 @@
             return output.ToString();
         }
 
+        /// <summary>
+        /// Saves the player's score at the end of a game.
+        /// </summary>
+        /// <param name="player"></param>
         private void SavePlayerScore(IPlayer player)
         {
             this.scoreboard.AddPlayer(player);
         }
 
+        /// <summary>
+        /// Checks whether the game has come to a solution and proceeds to asking for the player's name.
+        /// </summary>
+        /// <returns>A boolean result whether to proceed to end or not</returns>
         private bool CheckIfFieldIsSolved()
         {
             int firstCellValue = 1;
@@ -299,6 +369,9 @@
             return true;
         }
 
+        /// <summary>
+        /// Field initializer
+        /// </summary>
         private void InitializeField()
         {
             int fillValue = 1;
