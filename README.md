@@ -22,8 +22,7 @@ Program - Andrey
 Scoreboard - Ventsi
 
 Tile - Tsvetan
-
-
+-------------------------------------------------------
 Design Patterns implemented so far (20140714-2100):
 
 Creational Patterns:
@@ -44,7 +43,7 @@ Structural Patterns
 
 2) Proxy Pattern
 
-
+--------------------------------------------------------
 Unit testing
 
 ScoreboardProxy class -
