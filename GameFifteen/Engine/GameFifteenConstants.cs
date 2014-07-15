@@ -14,7 +14,7 @@
         internal const string InvalidCommandMessage = "Invalid move or command.";
         internal const string WinMessage = "Well done! You won the game in {0} moves.";
 
-        // 2, 2 is for testing
+        // 2, 2 is for testing purposes only
         internal const int FieldMinimumShuffles = 2;
         internal const int FieldMaximumShuffles = 2; 
         internal const int FieldInitialRows = 4;

@@ -19,6 +19,9 @@ namespace GameFifteen.Engine
             this.name = name;
         }
 
+        /// <summary>
+        /// Gets the name of a command
+        /// </summary>
         public string Name
         {
             get
@@ -27,6 +30,11 @@ namespace GameFifteen.Engine
             }
         }
 
+        /// <summary>
+        /// Command parser
+        /// </summary>
+        /// <param name="input">Console input</param>
+        /// <returns>A ready command</returns>
         public static Command Parse(string input)
         {
             return new Command(input);
