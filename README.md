@@ -22,6 +22,7 @@ Program - Andrey
 Scoreboard - Ventsi
 
 Tile - Tsvetan
+
 -------------------------------------------------------
 Design Patterns implemented so far (20140714-2100):
 
