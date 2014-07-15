@@ -48,7 +48,9 @@ Structural Patterns
 Unit testing
 
 ScoreboardProxy class -
+
 FieldMatrix class - 
+
 GameEngine class -
 
 We should discuss how to test the GameEngine, because its methods are private.
