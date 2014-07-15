@@ -4,8 +4,7 @@
 
     using GameFifteenProject.Contracts.Engine;
     using GameFifteenProject.Extensions;
-    using GameFifteenProject.GameObjects;
-    using GameFifteenProject.Contracts;    
+    using GameFifteenProject.GameObjects;    
 
     public sealed class GameFifteenEngine
     {
@@ -17,7 +16,7 @@
 
         private readonly FieldMatrix field;
         private readonly IRenderer renderer;
-        private readonly IScoreboard scoreboard;
+        private readonly Scoreboard scoreboard;
 
         private int emptyCellRow;
         private int emptyCellColumn;
@@ -28,7 +27,7 @@
         {
             this.field = new FieldMatrix();
             this.renderer = new ConsoleRenderer();
-            this.scoreboard = new ScoreboardProxy();
+            this.scoreboard = new Scoreboard();
         }
 
         public static GameFifteenEngine Instance
@@ -119,8 +118,8 @@
         private string ShowStartScreen()
         {
             var output = new StringBuilder();
-            output.AppendLine("Welcome to \"Game 15\". Please try to arrange the numbers sequentially.");
-            output.AppendLine("You can use the following commands:");
+            output.AppendLine("Welcome to the game “15”. Please try to arrange the numbers sequentially.");
+            output.AppendLine("You can the following commands:");
             output.AppendLine("'restart' -> to start a new game.");
             output.AppendLine("'top' -> to view the scoreboard.");
             output.AppendLine("'exit' -> to quit the game.");
@@ -287,8 +286,6 @@
                 {
                     return false;
                 }
-
-                firstCellValue++;
             }
 
             return true;

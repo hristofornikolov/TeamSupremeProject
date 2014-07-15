@@ -4,17 +4,19 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-
 namespace GameFifteenProject.GameObjects
 {
+    using System;
+
     using GameFifteenProject.Engine;
 
     /// <summary>
     /// Class with information about the player
     /// </summary>
-    public class Player
+    internal class Player
     {
         private string name;
+        private int moves;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Player"/> class
@@ -36,7 +38,7 @@ namespace GameFifteenProject.GameObjects
             {
                 return this.name;
             }
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -50,6 +52,22 @@ namespace GameFifteenProject.GameObjects
         /// <summary>
         /// Gets or sets the moves of the <see cref="Player"/> class instance
         /// </summary>
-        public int Moves { get; set; }
+        public int Moves 
+        { 
+            get
+            {
+                return this.moves;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(
+                        "Invalid player moves. It should not be possible for a player to win in less than one move.");
+                }
+
+                this.moves = value;
+            }
+        }
     }
 }
