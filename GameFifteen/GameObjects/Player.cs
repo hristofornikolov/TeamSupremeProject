@@ -7,13 +7,13 @@
 namespace GameFifteenProject.GameObjects
 {
     using System;
-
+    using GameFifteenProject.Contracts;
     using GameFifteenProject.Engine;
 
     /// <summary>
     /// Class with information about the player
     /// </summary>
-    internal class Player
+    internal class Player : IPlayer
     {
         private string name;
         private int moves;
@@ -38,7 +38,7 @@ namespace GameFifteenProject.GameObjects
             {
                 return this.name;
             }
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -58,7 +58,7 @@ namespace GameFifteenProject.GameObjects
             {
                 return this.moves;
             }
-            private set
+            set
             {
                 if (value <= 0)
                 {

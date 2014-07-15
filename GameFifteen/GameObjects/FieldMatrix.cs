@@ -5,10 +5,9 @@
 //-----------------------------------------------------------------------
 
 namespace GameFifteenProject.GameObjects
-{   
+{ 
     using System.Collections;
     using System.Collections.Generic;
-
     using GameFifteenProject.Engine;
 
     public class FieldMatrix : IEnumerable<int>
@@ -22,17 +21,26 @@ namespace GameFifteenProject.GameObjects
         
         public int Rows
         {
-            get { return GameFifteenConstants.FieldInitialRows; }
+            get
+            {
+                return GameFifteenConstants.FieldInitialRows;
+            }
         }
 
         public int Columns
         {
-            get { return GameFifteenConstants.FieldInitialColumns; }
+            get
+            {
+                return GameFifteenConstants.FieldInitialColumns;
+            }
         }
 
         public int Length
         {
-            get { return this.matrix.Length; }
+            get
+            {
+                return this.matrix.Length;
+            }
         }
 
         public int this[int index]
@@ -107,6 +115,6 @@ namespace GameFifteenProject.GameObjects
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
-        }       
+        }
     }
 }

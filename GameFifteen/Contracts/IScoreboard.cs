@@ -2,12 +2,10 @@
 {
     using System.Collections.Generic;
 
-    using GameFifteenProject.GameObjects;
-
     public interface IScoreboard
     {
-        void AddPlayer(Player player);
+        void AddPlayer(IPlayer player);
 
-        IList<Player> Players { get; }
+        IList<IPlayer> Players { get; }
     }
 }

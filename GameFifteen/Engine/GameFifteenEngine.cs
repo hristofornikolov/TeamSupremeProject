@@ -1,11 +1,11 @@
 ﻿namespace GameFifteenProject.Engine
 {
     using System.Text;
-
+    using GameFifteenProject.Contracts;
     using GameFifteenProject.Contracts.Engine;
     using GameFifteenProject.Extensions;
-    using GameFifteenProject.GameObjects;    
-
+    using GameFifteenProject.GameObjects;
+    
     public sealed class GameFifteenEngine
     {
         private static GameFifteenEngine instance;
@@ -16,7 +16,7 @@
 
         private readonly FieldMatrix field;
         private readonly IRenderer renderer;
-        private readonly Scoreboard scoreboard;
+        private readonly IScoreboard scoreboard;
 
         private int emptyCellRow;
         private int emptyCellColumn;
@@ -27,7 +27,7 @@
         {
             this.field = new FieldMatrix();
             this.renderer = new ConsoleRenderer();
-            this.scoreboard = new Scoreboard();
+            this.scoreboard = new ScoreboardProxy();
         }
 
         public static GameFifteenEngine Instance
@@ -203,7 +203,7 @@
         private bool IsInside(int row, int col)
         {
             return 0 <= row && row < this.field.Rows &&
-                0 <= col && col < this.field.Columns;
+                   0 <= col && col < this.field.Columns;
         }
 
         private void MoveEmptyCell(int newRow, int newCol)
@@ -271,7 +271,7 @@
             return output.ToString();
         }
 
-        private void SavePlayerScore(Player player)
+        private void SavePlayerScore(IPlayer player)
         {
             this.scoreboard.AddPlayer(player);
         }
@@ -286,6 +286,8 @@
                 {
                     return false;
                 }
+
+                firstCellValue++;
             }
 
             return true;

@@ -2,27 +2,25 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-
     using GameFifteenProject.Contracts;
     using GameFifteenProject.Engine;
 
     public class ScoreboardProxy : IScoreboard
     {
         private Scoreboard realScoreboard;
-
-        public void AddPlayer(Player player)
+        
+        public void AddPlayer(IPlayer player)
         {
             this.CheckIfScoreboardIsActive();
-            
+
+            this.realScoreboard.AddPlayer(player);
             if (this.realScoreboard.Players.Count > GameFifteenConstants.ScoreboardTopPlayersCount)
             {
                 this.RemoveWorstPlayer();
             }
-
-            this.realScoreboard.AddPlayer(player);
         }
 
-        public IList<Player> Players
+        public IList<IPlayer> Players
         {
             get
             {
@@ -31,8 +29,8 @@
                 if (this.realScoreboard.Players.Count > 0)
                 {
                     return this.realScoreboard.Players
-                        .OrderBy(p => p.Moves)
-                        .ToList();
+                               .OrderBy(p => p.Moves)
+                               .ToList();
                 }
 
                 return this.realScoreboard.Players;
@@ -53,8 +51,8 @@
         private void RemoveWorstPlayer()
         {
             var worstPlayer = this.realScoreboard.Players
-                .OrderByDescending(p => p.Moves)
-                .First();
+                                  .OrderByDescending(p => p.Moves)
+                                  .First();
 
             this.realScoreboard.Players.Remove(worstPlayer);
         }

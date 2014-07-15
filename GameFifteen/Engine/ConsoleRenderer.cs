@@ -1,7 +1,6 @@
 ﻿namespace GameFifteenProject.Engine
 {
     using System;
-
     using GameFifteenProject.Contracts.Engine;
 
     public class ConsoleRenderer : IRenderer

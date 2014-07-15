@@ -8,8 +8,6 @@ namespace GameFifteenProject.GameObjects
 {
     using System.Collections.Generic;
     using System.Linq;
-
-    using GameFifteenProject.Engine;
     using GameFifteenProject.Contracts;
 
     /// <summary>
@@ -17,35 +15,34 @@ namespace GameFifteenProject.GameObjects
     /// </summary>
     public class Scoreboard : IScoreboard
     {
-
         /// <summary>
         /// List with all players
         /// </summary>
-        private static IList<Player> players;
+        private readonly IList<IPlayer> players;
 
         public Scoreboard()
         {
-            players = new List<Player>();
+            players = new List<IPlayer>();
         }
 
         /// <summary>
         /// Method to add players
         /// </summary>
         /// <param name="player">Current player which we want to add to the scoreboard</param>
-        public void AddPlayer(Player player)
+        public void AddPlayer(IPlayer player)
         {
-            players.Add(player);
+            this.players.Add(player);
         }
 
         /// <summary>
         /// Get all players in the scoreboard
         /// sorted by their moves in ascending order
         /// </summary>
-        public IList<Player> Players
+        public IList<IPlayer> Players
         {
             get
             {
-                return players;
+                return this.players;
             }
         }
     }

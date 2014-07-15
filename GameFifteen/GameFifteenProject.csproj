@@ -53,6 +53,7 @@
     <Compile Include="Extensions\RandomNumberGenerator.cs" />
     <Compile Include="GameObjects\FieldMatrix.cs" />
     <Compile Include="Contracts\Engine\IRandomNumberGenerator.cs" />
+    <Compile Include="Contracts\IPlayer.cs" />
     <Compile Include="GameObjects\Player.cs" />
     <Compile Include="GameFifteenProgram.cs" />
     <Compile Include="GameObjects\Scoreboard.cs" />
