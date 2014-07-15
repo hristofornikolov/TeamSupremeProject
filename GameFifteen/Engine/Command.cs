@@ -3,11 +3,10 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-namespace GameFifteenProject.Engine
+namespace GameFifteen.Engine
 {
-    using GameFifteenProject.Contracts.Engine;
-
+    using GameFifteen.Contracts.Engine;
+ 
     /// <summary>
     /// Class that parse commands
     /// </summary>

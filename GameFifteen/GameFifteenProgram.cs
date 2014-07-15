@@ -3,11 +3,10 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-namespace GameFifteenProject
+namespace GameFifteen
 {
-    using GameFifteenProject.Engine;
-
+    using GameFifteen.Engine;
+ 
     /// <summary>
     /// This is the start point of the game.
     /// </summary>

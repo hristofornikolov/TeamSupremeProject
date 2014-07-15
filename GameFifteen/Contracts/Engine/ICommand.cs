@@ -1,4 +1,4 @@
-﻿namespace GameFifteenProject.Contracts.Engine
+﻿namespace GameFifteen.Contracts.Engine
 {
     public interface ICommand
     {

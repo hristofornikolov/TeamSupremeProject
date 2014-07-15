@@ -3,12 +3,11 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-namespace GameFifteenProject.GameObjects
+namespace GameFifteen.GameObjects
 {
     using System.Collections.Generic;
     using System.Linq;
-    using GameFifteenProject.Contracts;
+    using GameFifteen.Contracts;
 
     /// <summary>
     /// Display the scoreboard

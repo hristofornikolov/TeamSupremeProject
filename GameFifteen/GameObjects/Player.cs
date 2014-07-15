@@ -3,17 +3,16 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-
-namespace GameFifteenProject.GameObjects
+namespace GameFifteen.GameObjects
 {
     using System;
-    using GameFifteenProject.Contracts;
+    using GameFifteen.Contracts;
     using GameFifteenProject.Engine;
 
     /// <summary>
     /// Class with information about the player
     /// </summary>
-    internal class Player : IPlayer
+    public class Player : IPlayer
     {
         private string name;
         private int moves;

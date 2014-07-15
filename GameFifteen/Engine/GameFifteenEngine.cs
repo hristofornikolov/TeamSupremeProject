@@ -1,8 +1,11 @@
-﻿namespace GameFifteenProject.Engine
+﻿namespace GameFifteen.Engine
 {
     using System.Text;
-    using GameFifteenProject.Contracts;
+    using GameFifteen.Contracts;
+    using GameFifteen.Contracts.Engine;
+    using GameFifteen.GameObjects;
     using GameFifteenProject.Contracts.Engine;
+    using GameFifteenProject.Engine;
     using GameFifteenProject.Extensions;
     using GameFifteenProject.GameObjects;
     

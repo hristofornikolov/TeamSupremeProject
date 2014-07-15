@@ -1,4 +1,4 @@
-﻿namespace GameFifteenProject.Contracts
+﻿namespace GameFifteen.Contracts
 {
     using System.Collections.Generic;
 
