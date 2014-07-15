@@ -1,22 +1,23 @@
 ﻿namespace GameFifteenProject.Extensions
 {
     using System;
+    using GameFifteenProject.Contracts.Engine;
 
-    public static class RandomNumberGenerator
+    public class RandomNumberGenerator : IRandomNumberGenerator
     {
         private static readonly Random generator = new Random();
 
-        public static int Next()
+        public int Next()
         {
-            return Next(0, Int32.MaxValue - 1);
+            return this.Next(0, Int32.MaxValue - 1);
         }
 
-        public static int Next(int maxValue)
+        public int Next(int maxValue)
         {
-            return Next(0, maxValue);
+            return this.Next(0, maxValue);
         }
 
-        public static int Next(int minValue, int maxValue)
+        public int Next(int minValue, int maxValue)
         {
             return generator.Next(minValue, maxValue + 1);
         }

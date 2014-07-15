@@ -17,6 +17,7 @@
         private readonly FieldMatrix field;
         private readonly IRenderer renderer;
         private readonly IScoreboard scoreboard;
+        private readonly IRandomNumberGenerator randomNumberGenerator;
 
         private int emptyCellRow;
         private int emptyCellColumn;
@@ -28,6 +29,7 @@
             this.field = new FieldMatrix();
             this.renderer = new ConsoleRenderer();
             this.scoreboard = new ScoreboardProxy();
+            this.randomNumberGenerator = new RandomNumberGenerator();
         }
 
         public static GameFifteenEngine Instance
@@ -176,27 +178,27 @@
 
         private void RearrangeField()
         {
-            int shuffles = RandomNumberGenerator.Next(
+            int shuffles = this.randomNumberGenerator.Next(
                 GameFifteenConstants.FieldMinimumShuffles, GameFifteenConstants.FieldMaximumShuffles);
             for (int i = 0; i < shuffles; i++)
             {
-                int randomDirectionIndex = RandomNumberGenerator.Next(dirRow.Length - 1);
+                int randomDirectionIndex = this.randomNumberGenerator.Next(dirRow.Length - 1);
                 int newRowIndex = this.emptyCellRow + dirRow[randomDirectionIndex];
                 int newColIndex = this.emptyCellColumn + dirColumn[randomDirectionIndex];
 
-                if (!IsInside(newRowIndex, newColIndex))
+                if (!this.IsInside(newRowIndex, newColIndex))
                 {
                     // step back
                     i--;
                     continue;
                 }
 
-                MoveEmptyCell(newRowIndex, newColIndex);
+                this.MoveEmptyCell(newRowIndex, newColIndex);
             }
 
             if (this.CheckIfFieldIsSolved())
             {
-                RearrangeField();
+                this.RearrangeField();
             }
         }
 
@@ -224,7 +226,7 @@
             int number;
             if (int.TryParse(destinationValue, out number) &&
                 number >= 1 &&
-                number < emptyCellValue)
+                number < this.emptyCellValue)
             {
                 int nextRow = 0;
                 int nextCol = 0;
@@ -233,7 +235,7 @@
                     nextRow = this.emptyCellRow + dirRow[i];
                     nextCol = this.emptyCellColumn + dirColumn[i];
 
-                    if (IsInside(nextRow, nextCol) &&
+                    if (this.IsInside(nextRow, nextCol) &&
                         this.field[nextRow, nextCol] == number)
                     {
                         this.MoveEmptyCell(nextRow, nextCol);
@@ -297,7 +299,6 @@
         private void InitializeField()
         {
             int fillValue = 1;
-
             for (int i = 0; i < this.field.Length; i++)
             {
                 this.field[i] = fillValue;
