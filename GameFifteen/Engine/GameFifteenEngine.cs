@@ -118,11 +118,11 @@
         private string ShowStartScreen()
         {
             var output = new StringBuilder();
-            output.AppendLine("Welcome to the game “15”. Please try to arrange the numbers sequentially.");
-            output.AppendLine("You can the following commands:");
-            output.AppendLine("'restart' -> to start a new game.");
-            output.AppendLine("'top' -> to view the scoreboard.");
-            output.AppendLine("'exit' -> to quit the game.");
+            output.AppendLine(GameFifteenConstants.StartScreenMessage);
+            output.AppendLine(GameFifteenConstants.CmdsDescriptionMessage);
+            output.AppendLine(GameFifteenConstants.RestartCmdDescriptionMessage);
+            output.AppendLine(GameFifteenConstants.TopCmdDescriptionMessage);
+            output.AppendLine(GameFifteenConstants.ExitCmdDescriptionMessage);
 
             return output.ToString();
         }
@@ -259,12 +259,13 @@
         private string ShowScoreboard()
         {
             var output = new StringBuilder();
-            output.AppendLine("Scoreboard:");
+            output.AppendLine(GameFifteenConstants.ScoreboardTitle);
 
             var players = this.scoreboard.Players;
             for (int i = 0; i < players.Count; i++)
             {
-                output.AppendFormat("{0}. {1} --> {2} moves", i + 1, players[i].Name, players[i].Moves);
+                output.AppendFormat(GameFifteenConstants.ScoreboardView,
+                    i + 1, players[i].Name, players[i].Moves);
                 output.AppendLine();
             }
 
