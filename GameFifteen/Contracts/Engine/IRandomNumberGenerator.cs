@@ -1,5 +1,13 @@
-﻿namespace GameFifteenProject.Contracts.Engine
+﻿//-----------------------------------------------------------------------
+// <copyright file="IRandomNumberGenerator.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteenProject.Contracts.Engine
 {
+    /// <summary>
+    /// Random number generators interface
+    /// </summary>
     public interface IRandomNumberGenerator
     {
         /// <summary>

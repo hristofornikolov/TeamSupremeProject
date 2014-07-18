@@ -12,8 +12,15 @@ namespace GameFifteen.Engine
     /// </summary>
     public class Command : ICommand
     {
+        /// <summary>
+        /// Field with commands name
+        /// </summary>
         private readonly string name;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Command"/> class
+        /// </summary>
+        /// <param name="name">The name of the command</param>
         private Command(string name)
         {
             this.name = name;

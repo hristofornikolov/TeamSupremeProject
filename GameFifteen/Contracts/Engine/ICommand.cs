@@ -1,5 +1,13 @@
-﻿namespace GameFifteen.Contracts.Engine
+﻿//-----------------------------------------------------------------------
+// <copyright file="ICommand.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteen.Contracts.Engine
 {
+    /// <summary>
+    /// Commands interface
+    /// </summary>
     public interface ICommand
     {
         /// <summary>

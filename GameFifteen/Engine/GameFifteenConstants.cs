@@ -1,7 +1,15 @@
-﻿namespace GameFifteenProject.Engine
+﻿//-----------------------------------------------------------------------
+// <copyright file="GameFifteenConstants.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteenProject.Engine
 {
     using System;
 
+    /// <summary>
+    /// Defines all constants in the game
+    /// </summary>
     internal static class GameFifteenConstants
     {
         internal const string StartScreenMessage = "Welcome to the game “15”. Please try to arrange the numbers sequentially.";

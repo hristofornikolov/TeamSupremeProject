@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Scoreboard.cs" company="TeamSupreme">
+// <copyright file="IScoreboard.cs" company="TeamSupreme">
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------

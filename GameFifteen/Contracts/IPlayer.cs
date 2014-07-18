@@ -1,7 +1,15 @@
+//-----------------------------------------------------------------------
+// <copyright file="IPlayer.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace GameFifteen.Contracts
 {
     using System;
 
+    /// <summary>
+    /// Players interface 
+    /// </summary>
     public interface IPlayer
     {
         /// <summary>

@@ -1,8 +1,17 @@
-﻿namespace GameFifteen.Engine
+﻿//-----------------------------------------------------------------------
+// <copyright file="ConsoleRenderer.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteen.Engine
 {
     using System;
+
     using GameFifteenProject.Contracts.Engine;
 
+    /// <summary>
+    /// Defines the renderer
+    /// </summary>
     public class ConsoleRenderer : IRenderer
     {
         /// <summary>

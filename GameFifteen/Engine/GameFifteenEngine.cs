@@ -1,4 +1,9 @@
-﻿namespace GameFifteen.Engine
+﻿//-----------------------------------------------------------------------
+// <copyright file="GameFifteenEngine.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteen.Engine
 {
     using System.Text;
     using GameFifteen.Contracts;
@@ -10,12 +15,12 @@
     using GameFifteenProject.GameObjects;
     
     public sealed class GameFifteenEngine
-    {
-        private static GameFifteenEngine instance;
-
+    {       
         // All possible directions for moving the cells
         private static readonly int[] dirRow = { -1, 0, 1, 0 };
         private static readonly int[] dirColumn = { 0, 1, 0, -1 };
+
+        private static GameFifteenEngine instance;
 
         private readonly FieldMatrix field;
         private readonly IRenderer renderer;
@@ -28,7 +33,7 @@
         private int movesCount;
 
         /// <summary>
-        /// The game engine constructor
+        /// Initializes a new instance of the <see cref="GameFifteenEngine"/> class
         /// </summary>
         private GameFifteenEngine()
         {
@@ -39,7 +44,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the game in case it has not been initialized.
+        /// Gets a new instance of the game in case it has not been initialized.
         /// </summary>
         public static GameFifteenEngine Instance
         {
@@ -195,9 +200,9 @@
         }
 
         /// <summary>
-        /// 
+        /// Display the result on the console
         /// </summary>
-        /// <param name="output"></param>
+        /// <param name="output">The output which will be displayon the console</param>
         private void RenderCommandResult(string output)
         {
             this.renderer.Output(output);
