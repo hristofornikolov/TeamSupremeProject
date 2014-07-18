@@ -19,9 +19,23 @@ namespace GameFifteen.GameObjects
         /// </summary>
         private readonly IList<IPlayer> players;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Scoreboard"/> class
+        /// </summary>
         public Scoreboard()
         {
-            players = new List<IPlayer>();
+            this.players = new List<IPlayer>();
+        }
+
+        /// <summary>
+        /// Gets all players in the scoreboard sorted by their moves in ascending order
+        /// </summary>
+        public IList<IPlayer> Players
+        {
+            get
+            {
+                return this.players;
+            }
         }
 
         /// <summary>
@@ -31,18 +45,6 @@ namespace GameFifteen.GameObjects
         public void AddPlayer(IPlayer player)
         {
             this.players.Add(player);
-        }
-
-        /// <summary>
-        /// Get all players in the scoreboard
-        /// sorted by their moves in ascending order
-        /// </summary>
-        public IList<IPlayer> Players
-        {
-            get
-            {
-                return this.players;
-            }
         }
     }
 }
