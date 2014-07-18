@@ -3,11 +3,11 @@
 
 HQPC Team Project
 
-Колеги, поставяйте тук кратки коментари, когато внасяте промени по кода!
+Dear colleagues, please, place here brief comments on the changes you make on the code!
 
-Относно константите в Си Шарп, моля, използвайте Паскал кейс! Христофор
+In regards to constants casing in C#, please, use PascalCase! Hristofor
 
-Първоначално разпределение на класовете за рефакторитране:
+Initial distribution of the classes to be refactored:
 
 Command - Stefka
 
