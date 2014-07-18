@@ -14,7 +14,14 @@ namespace GameFifteen.GameObjects
     /// </summary>
     public class Player : IPlayer
     {
+        /// <summary>
+        /// Field with the name of the Player
+        /// </summary>
         private string name;
+
+        /// <summary>
+        /// Field with the moves of the Player
+        /// </summary>
         private int moves;
 
         /// <summary>
@@ -37,6 +44,7 @@ namespace GameFifteen.GameObjects
             {
                 return this.name;
             }
+
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -57,6 +65,7 @@ namespace GameFifteen.GameObjects
             {
                 return this.moves;
             }
+
             set
             {
                 if (value <= 0)
