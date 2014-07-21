@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Program.cs" company="TeamSupreme">
+// <copyright file="GameFifteenProgram.cs" company="TeamSupreme">
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -12,6 +12,9 @@ namespace GameFifteen
     /// </summary>
     public class GameFifteenProgram
     {
+        /// <summary>
+        /// Method to starts the game
+        /// </summary>
         public static void Main()
         {
             GameFifteenEngine.Instance.Start();

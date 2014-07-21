@@ -1,14 +1,23 @@
-﻿namespace GameFifteenProject.Extensions
+﻿//-----------------------------------------------------------------------
+// <copyright file="RandomNumberGenerator.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+namespace GameFifteenProject.Extensions
 {
     using System;
+
     using GameFifteenProject.Contracts.Engine;
 
     /// <summary>
-    /// Generates random numbers for the inintial rearrangement of the game field prior to game start.
+    /// Generates random numbers for the initial rearrangement of the game field prior to game start.
     /// </summary>
     public class RandomNumberGenerator : IRandomNumberGenerator
     {
-        private static readonly Random generator = new Random();
+        /// <summary>
+        /// Random number generator
+        /// </summary>
+        private static readonly Random Generator = new Random();
 
         /// <summary>
         /// Provides the next random value without upper or lower limit
@@ -16,7 +25,7 @@
         /// <returns>A random value</returns>
         public int Next()
         {
-            return this.Next(0, Int32.MaxValue - 1);
+            return this.Next(0, int.MaxValue - 1);
         }
 
         /// <summary>

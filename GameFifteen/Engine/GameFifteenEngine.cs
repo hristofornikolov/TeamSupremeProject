@@ -17,8 +17,8 @@ namespace GameFifteen.Engine
     public sealed class GameFifteenEngine
     {       
         // All possible directions for moving the cells
-        private static readonly int[] dirRow = { -1, 0, 1, 0 };
-        private static readonly int[] dirColumn = { 0, 1, 0, -1 };
+        private static readonly int[] DirRow = { -1, 0, 1, 0 };
+        private static readonly int[] DirColumn = { 0, 1, 0, -1 };
 
         private static GameFifteenEngine instance;
 
@@ -33,7 +33,7 @@ namespace GameFifteen.Engine
         private int movesCount;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GameFifteenEngine"/> class
+        /// Prevents a default instance of the <see cref="GameFifteenEngine"/> class from being created
         /// </summary>
         private GameFifteenEngine()
         {
@@ -73,7 +73,7 @@ namespace GameFifteen.Engine
 
                 if (this.CheckIfFieldIsSolved())
                 {
-                    command = EndGame(command);
+                    command = this.EndGame(command);
                 }
             }
         }
@@ -194,6 +194,7 @@ namespace GameFifteen.Engine
                     }
                 }
             }
+
             output.AppendLine(" -------------");
 
             return output.ToString();
@@ -202,7 +203,7 @@ namespace GameFifteen.Engine
         /// <summary>
         /// Display the result on the console
         /// </summary>
-        /// <param name="output">The output which will be displayon the console</param>
+        /// <param name="output">The output which will be display on the console</param>
         private void RenderCommandResult(string output)
         {
             this.renderer.Output(output);
@@ -231,9 +232,9 @@ namespace GameFifteen.Engine
                 GameFifteenConstants.FieldMinimumShuffles, GameFifteenConstants.FieldMaximumShuffles);
             for (int i = 0; i < shuffles; i++)
             {
-                int randomDirectionIndex = this.randomNumberGenerator.Next(dirRow.Length - 1);
-                int newRowIndex = this.emptyCellRow + dirRow[randomDirectionIndex];
-                int newColIndex = this.emptyCellColumn + dirColumn[randomDirectionIndex];
+                int randomDirectionIndex = this.randomNumberGenerator.Next(DirRow.Length - 1);
+                int newRowIndex = this.emptyCellRow + DirRow[randomDirectionIndex];
+                int newColIndex = this.emptyCellColumn + DirColumn[randomDirectionIndex];
 
                 if (!this.IsInside(newRowIndex, newColIndex))
                 {
@@ -254,9 +255,9 @@ namespace GameFifteen.Engine
         /// <summary>
         /// Checks whether the number input by the user is inside the matrix by its coordinates.
         /// </summary>
-        /// <param name="row"></param>
-        /// <param name="col"></param>
-        /// <returns></returns>
+        /// <param name="row">Current cell row</param>
+        /// <param name="col">Current cell column</param>
+        /// <returns>True or false</returns>
         private bool IsInside(int row, int col)
         {
             return 0 <= row && row < this.field.Rows &&
@@ -279,7 +280,7 @@ namespace GameFifteen.Engine
         }
 
         /// <summary>
-        /// Moves the number provided by the command t othe empty cell.
+        /// Moves the number provided by the command to the empty cell.
         /// </summary>
         /// <param name="destinationValue">Destination cell</param>
         /// <returns>The redrawn matrix as a string</returns>
@@ -296,10 +297,10 @@ namespace GameFifteen.Engine
                 int nextRow = 0;
                 int nextCol = 0;
 
-                for (int i = 0; i < dirRow.Length; i++)
+                for (int i = 0; i < DirRow.Length; i++)
                 {
-                    nextRow = this.emptyCellRow + dirRow[i];
-                    nextCol = this.emptyCellColumn + dirColumn[i];
+                    nextRow = this.emptyCellRow + DirRow[i];
+                    nextCol = this.emptyCellColumn + DirColumn[i];
 
                     if (this.IsInside(nextRow, nextCol) &&
                         this.field[nextRow, nextCol] == number)
@@ -336,8 +337,7 @@ namespace GameFifteen.Engine
             var players = this.scoreboard.Players;
             for (int i = 0; i < players.Count; i++)
             {
-                output.AppendFormat(GameFifteenConstants.ScoreboardView,
-                    i + 1, players[i].Name, players[i].Moves);
+                output.AppendFormat(GameFifteenConstants.ScoreboardView, i + 1, players[i].Name, players[i].Moves);
                 output.AppendLine();
             }
 
@@ -347,7 +347,7 @@ namespace GameFifteen.Engine
         /// <summary>
         /// Saves the player's score at the end of a game.
         /// </summary>
-        /// <param name="player"></param>
+        /// <param name="player">The current player we want to add</param>
         private void SavePlayerScore(IPlayer player)
         {
             this.scoreboard.AddPlayer(player);
