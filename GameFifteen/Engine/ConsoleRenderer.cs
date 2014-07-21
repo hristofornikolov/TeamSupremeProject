@@ -7,7 +7,7 @@ namespace GameFifteen.Engine
 {
     using System;
 
-    using GameFifteenProject.Contracts.Engine;
+    using GameFifteen.Contracts.Engine;
 
     /// <summary>
     /// Defines the renderer

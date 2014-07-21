@@ -9,7 +9,7 @@ namespace GameFifteen.GameObjects
     using System.Linq;
 
     using GameFifteen.Contracts;
-    using GameFifteenProject.Engine;
+    using GameFifteen.Engine;
 
     /// <summary>
     /// Class ScoreboardProxy - Implements the Proxy design pattern

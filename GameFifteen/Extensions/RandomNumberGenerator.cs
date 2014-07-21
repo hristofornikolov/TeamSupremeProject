@@ -3,11 +3,11 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace GameFifteenProject.Extensions
+namespace GameFifteen.Extensions
 {
     using System;
 
-    using GameFifteenProject.Contracts.Engine;
+    using GameFifteen.Contracts.Engine;
 
     /// <summary>
     /// Generates random numbers for the initial rearrangement of the game field prior to game start.

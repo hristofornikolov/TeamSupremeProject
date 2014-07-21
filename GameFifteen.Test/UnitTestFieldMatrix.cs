@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteenProject.GameObjects;
+    using GameFifteen.GameObjects;
 
     [TestClass]
     public class UnitTestFieldMatrix

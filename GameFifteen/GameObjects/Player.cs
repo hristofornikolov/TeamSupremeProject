@@ -8,7 +8,7 @@ namespace GameFifteen.GameObjects
     using System;
 
     using GameFifteen.Contracts;
-    using GameFifteenProject.Engine;
+    using GameFifteen.Engine;
 
     /// <summary>
     /// Class with information about the player

@@ -9,10 +9,10 @@ namespace GameFifteen.Engine
     using GameFifteen.Contracts;
     using GameFifteen.Contracts.Engine;
     using GameFifteen.GameObjects;
-    using GameFifteenProject.Contracts.Engine;
-    using GameFifteenProject.Engine;
-    using GameFifteenProject.Extensions;
-    using GameFifteenProject.GameObjects;
+    using GameFifteen.Contracts.Engine;
+    using GameFifteen.Engine;
+    using GameFifteen.Extensions;
+    using GameFifteen.GameObjects;
     
     public sealed class GameFifteenEngine
     {       
