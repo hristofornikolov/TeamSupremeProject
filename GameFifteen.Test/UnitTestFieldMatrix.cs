@@ -11,8 +11,8 @@
         public void TestNewFieldMatrixConstructorCorrectSize()
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
-            Assert.AreEqual(fieldMatrix.Rows, 4);
-            Assert.AreEqual(fieldMatrix.Columns, 4);
+            Assert.AreEqual(4, fieldMatrix.Rows);
+            Assert.AreEqual(4, fieldMatrix.Columns);
         }
 
         [TestMethod]
