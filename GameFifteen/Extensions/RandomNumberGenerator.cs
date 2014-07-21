@@ -46,7 +46,7 @@ namespace GameFifteenProject.Extensions
         /// <returns>A random value</returns>
         public int Next(int minValue, int maxValue)
         {
-            return generator.Next(minValue, maxValue + 1);
+            return Generator.Next(minValue, maxValue + 1);
         }
     }
 }
