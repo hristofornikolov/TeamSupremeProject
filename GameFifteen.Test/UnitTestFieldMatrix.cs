@@ -32,6 +32,18 @@
 
         }
 
+        [TestMethod]
+        public void TestNewFieldMatrixLengthPropertyValidity()
+        {
+            FieldMatrix fieldMatrix = new FieldMatrix();
+            int testlength = 16;
+            Assert.AreEqual(testlength, fieldMatrix.Rows * fieldMatrix.Columns);
+        }
+
+
+
+
+
 
     }
 }
