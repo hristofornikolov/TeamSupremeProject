@@ -72,8 +72,8 @@ namespace GameFifteen.GameObjects
             {
                 int value = 0;
                 bool isMatch = false;
-
                 int currentIndex = 0;
+
                 for (int i = 0; i < GameFifteenConstants.FieldInitialRows; i++)
                 {
                     for (int j = 0; j < GameFifteenConstants.FieldInitialColumns; j++)

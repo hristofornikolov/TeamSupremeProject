@@ -11,7 +11,7 @@ namespace GameFifteen.Engine
     using GameFifteen.Contracts;
     using GameFifteen.Contracts.Engine;
     using GameFifteen.GameObjects;
-
+    
     public sealed class GameFifteenEngine
     {
         // All possible directions for moving the cells
@@ -318,6 +318,7 @@ namespace GameFifteen.Engine
             this.renderer.Output(String.Format(GameFifteenConstants.WinMessage, this.movesCount));
             this.renderer.Output(Environment.NewLine);
             this.renderer.Output(GameFifteenConstants.AskNameMessage);
+
             string playerName = this.renderer.Input();
             this.SavePlayerScore(playerName, this.movesCount);
         }
