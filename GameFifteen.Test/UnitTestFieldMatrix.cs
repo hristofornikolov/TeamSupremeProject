@@ -37,7 +37,7 @@
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
             int testlength = 16;
-            Assert.AreEqual(testlength, fieldMatrix.Rows * fieldMatrix.Columns);
+            Assert.AreEqual(testlength, fieldMatrix.Length);
         }
 
 
