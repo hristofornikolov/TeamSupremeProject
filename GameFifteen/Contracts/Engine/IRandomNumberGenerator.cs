@@ -3,7 +3,8 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace GameFifteenProject.Contracts.Engine
+
+namespace GameFifteen.Contracts.Engine
 {
     /// <summary>
     /// Random number generators interface

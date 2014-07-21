@@ -3,48 +3,21 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+
 namespace GameFifteen.Engine
 {
-    using GameFifteen.Contracts.Engine;
- 
     /// <summary>
-    /// Class that parse commands
+    /// Abstract class that defines specific commands
     /// </summary>
-    public class Command : ICommand
+    public abstract class Command
     {
-        /// <summary>
-        /// Field with commands name
-        /// </summary>
-        private readonly string name;
+        protected GameFifteenEngine gameEngine;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Command"/> class
-        /// </summary>
-        /// <param name="name">The name of the command</param>
-        private Command(string name)
+        protected Command(GameFifteenEngine gameEngine)
         {
-            this.name = name;
+            this.gameEngine = gameEngine;
         }
 
-        /// <summary>
-        /// Gets the name of a command
-        /// </summary>
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-        }
-
-        /// <summary>
-        /// Command parser
-        /// </summary>
-        /// <param name="input">Console input</param>
-        /// <returns>A ready command</returns>
-        public static Command Parse(string input)
-        {
-            return new Command(input);
-        }
+        public abstract string Execute();
     }
 }

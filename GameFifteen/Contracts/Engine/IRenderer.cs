@@ -3,7 +3,8 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace GameFifteenProject.Contracts.Engine
+
+namespace GameFifteen.Contracts.Engine
 {
     /// <summary>
     /// Renderers interface
@@ -11,15 +12,15 @@ namespace GameFifteenProject.Contracts.Engine
     public interface IRenderer
     {
         /// <summary>
-        /// Console reading method
+        /// Input reading method
         /// </summary>
         /// <returns>The input read</returns>
         string Input();
 
         /// <summary>
-        /// Console writing method
+        /// Output writing method
         /// </summary>
-        /// <param name="output">The output written</param>
-        void Output(string output);
+        /// <param name="result">The output written</param>
+        void Output(string result);
     }
 }

@@ -3,12 +3,12 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+
 namespace GameFifteen.GameObjects
 {
     using System;
-
     using GameFifteen.Contracts;
-    using GameFifteenProject.Engine;
+    using GameFifteen.Engine;
 
     /// <summary>
     /// Class with information about the player
@@ -28,8 +28,6 @@ namespace GameFifteen.GameObjects
         /// <summary>
         /// Initializes a new instance of the <see cref="Player"/> class
         /// </summary>
-        /// <param name="name">The name of the player</param>
-        /// <param name="moves">Number of moves</param>
         public Player(string name, int moves)
         {
             this.Name = name;

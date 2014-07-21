@@ -3,6 +3,7 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+
 namespace GameFifteen.Contracts
 {
     using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace GameFifteen.Contracts
     /// Scoreboards interface
     /// </summary>
     public interface IScoreboard
-    {      
+    { 
         /// <summary>
         /// Gets the list of players to be displayed on the scoreboard
         /// </summary>

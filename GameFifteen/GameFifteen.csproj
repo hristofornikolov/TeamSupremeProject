@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Engine\ICommand.cs" />
     <Compile Include="Contracts\Engine\IRenderer.cs" />
     <Compile Include="Contracts\IScoreboard.cs" />
     <Compile Include="Engine\Command.cs" />
     <Compile Include="Engine\ConsoleRenderer.cs" />
     <Compile Include="Engine\GameFifteenConstants.cs" />
     <Compile Include="Engine\GameFifteenEngine.cs" />
+    <Compile Include="Engine\ExitCommand.cs" />
+    <Compile Include="Engine\MoveCellCommand.cs" />
+    <Compile Include="Engine\TopCommand.cs" />
+    <Compile Include="Engine\RestartCommand.cs" />
     <Compile Include="Extensions\RandomNumberGenerator.cs" />
     <Compile Include="GameObjects\FieldMatrix.cs" />
     <Compile Include="Contracts\Engine\IRandomNumberGenerator.cs" />

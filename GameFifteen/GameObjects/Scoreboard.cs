@@ -3,11 +3,11 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
+
 namespace GameFifteen.GameObjects
 {
     using System.Collections.Generic;
     using System.Linq;
-
     using GameFifteen.Contracts;
 
     /// <summary>

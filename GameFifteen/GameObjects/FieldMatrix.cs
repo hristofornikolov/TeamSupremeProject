@@ -4,12 +4,11 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GameFifteenProject.GameObjects
+namespace GameFifteen.GameObjects
 { 
     using System.Collections;
     using System.Collections.Generic;
-
-    using GameFifteenProject.Engine;
+    using GameFifteen.Engine;
 
     /// <summary>
     /// Creation of the field matrix

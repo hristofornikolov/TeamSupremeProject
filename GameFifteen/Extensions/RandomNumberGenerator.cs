@@ -3,11 +3,11 @@
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace GameFifteenProject.Extensions
+
+namespace GameFifteen.Extensions
 {
     using System;
-
-    using GameFifteenProject.Contracts.Engine;
+    using GameFifteen.Contracts.Engine;
 
     /// <summary>
     /// Generates random numbers for the initial rearrangement of the game field prior to game start.
@@ -17,7 +17,7 @@ namespace GameFifteenProject.Extensions
         /// <summary>
         /// Random number generator
         /// </summary>
-        private static readonly Random Generator = new Random();
+        private static readonly Random generator = new Random();
 
         /// <summary>
         /// Provides the next random value without upper or lower limit
@@ -46,7 +46,7 @@ namespace GameFifteenProject.Extensions
         /// <returns>A random value</returns>
         public int Next(int minValue, int maxValue)
         {
-            return Generator.Next(minValue, maxValue + 1);
+            return generator.Next(minValue, maxValue + 1);
         }
     }
 }
