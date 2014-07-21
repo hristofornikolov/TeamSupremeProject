@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFifteen", "GameFifteen.csproj", "{EE945DFB-A7C6-48B5-A3ED-9079C6FA71B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFifteen.Test", "..\GameFifteen.Test\GameFifteen.Test.csproj", "{76723069-E357-4D40-87E1-5E23FE24A473}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFifteen.Tests", "..\GameFifteen.Tests\GameFifteen.Tests.csproj", "{76723069-E357-4D40-87E1-5E23FE24A473}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

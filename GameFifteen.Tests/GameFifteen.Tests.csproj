@@ -6,8 +6,8 @@
     <ProjectGuid>{76723069-E357-4D40-87E1-5E23FE24A473}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GameFifteen.Test</RootNamespace>
-    <AssemblyName>GameFifteen.Test</AssemblyName>
+    <RootNamespace>GameFifteen.Tests</RootNamespace>
+    <AssemblyName>GameFifteen.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

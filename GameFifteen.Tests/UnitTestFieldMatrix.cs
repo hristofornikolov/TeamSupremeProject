@@ -1,4 +1,4 @@
-﻿namespace GameFifteen.Test
+﻿namespace GameFifteen.Tests
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
