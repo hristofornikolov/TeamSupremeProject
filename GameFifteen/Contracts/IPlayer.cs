@@ -6,8 +6,6 @@
 
 namespace GameFifteen.Contracts
 {
-    using System;
-
     /// <summary>
     /// Players interface 
     /// </summary>

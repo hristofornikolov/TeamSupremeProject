@@ -9,11 +9,12 @@ namespace GameFifteen.GameObjects
     using System.Collections;
     using System.Collections.Generic;
     using GameFifteen.Engine;
+    using GameFifteen.Contracts;
 
     /// <summary>
     /// Creation of the field matrix
     /// </summary>
-    public class FieldMatrix : IEnumerable<int>
+    public class FieldMatrix : IFieldMatrix, IEnumerable<int>
     {
         /// <summary>
         /// Matrix bi-dimensional array initialization
@@ -23,9 +24,9 @@ namespace GameFifteen.GameObjects
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldMatrix"/> class
         /// </summary>
-        public FieldMatrix()
+        public FieldMatrix(int rows, int columns)
         {
-            this.matrix = new int[GameFifteenConstants.FieldInitialRows, GameFifteenConstants.FieldInitialColumns];
+            this.matrix = new int[rows, columns];
         }
         
         /// <summary>
