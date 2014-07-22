@@ -40,7 +40,7 @@
         [TestMethod]
         public void CheckLinearIndex()
         {
-            FieldMatrix fieldMatrix = new FieldMatrix();
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
             int counter = 0;
             for (int i = 0; i < fieldMatrix.Rows; i++)
             {
