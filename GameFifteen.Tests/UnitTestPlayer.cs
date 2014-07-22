@@ -40,8 +40,16 @@
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void CheckIfPlayerMovesAreValid()
+        {
+            Player player = new Player("Pesho", 5);
+
+            Assert.AreEqual(5, player.Moves);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CheckIfPlayerMovesValueIsNegative()
         {
             Player player = new Player("Pesho", -5);
         }

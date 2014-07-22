@@ -9,6 +9,7 @@ namespace GameFifteen
     using GameFifteen.Contracts;
     using GameFifteen.Contracts.Engine;
     using GameFifteen.Engine;
+    using GameFifteen.Engine.Factories;
     using GameFifteen.Extensions;
     using GameFifteen.GameObjects;
  
@@ -22,7 +23,7 @@ namespace GameFifteen
         /// </summary>
         public static void Main()
         {
-            FieldMatrix field = new FieldMatrix();
+            IFieldMatrix field = FieldFactory.Instance.GetField(4);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();

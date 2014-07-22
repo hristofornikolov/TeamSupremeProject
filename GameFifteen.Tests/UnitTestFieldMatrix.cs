@@ -10,7 +10,7 @@
         [TestMethod]
         public void CheckNewFieldMatrixConstructorCorrectSize()
         {
-            FieldMatrix fieldMatrix = new FieldMatrix();
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
             Assert.AreEqual(4, fieldMatrix.Rows);
             Assert.AreEqual(4, fieldMatrix.Columns);
         }
@@ -18,56 +18,23 @@
         [TestMethod]
         public void CheckNewFieldMatrixConstructorCorrectInitialization()
         {
-            FieldMatrix fieldMatrix = new FieldMatrix();
-
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
             foreach (var cell in fieldMatrix)
             {
                 if (cell != 0)
-                    {
-                        throw new ArgumentException("When initialized, a cell value must be equal to zero!");
-                    }
+                {
+                    throw new ArgumentException("When initialized, a cell value must be equal to zero!");
+                }
             }
-
-            //for (int i = 0; i < fieldMatrix.Rows; i++)
-            //{
-            //    for (int j = 0; j < fieldMatrix.Columns; j++)
-            //    {
-            //        if (fieldMatrix[i, j] != 0)
-            //        {
-            //            throw new ArgumentException("When initialized, a cell value must be equal to zero!");
-            //        }
-            //    }
-            //}
         }
 
         [TestMethod]
         public void CheckNewFieldMatrixLengthPropertyValidity()
         {
-            FieldMatrix fieldMatrix = new FieldMatrix();
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
             int testlength = 16;
             Assert.AreEqual(testlength, fieldMatrix.Length);
+
         }
-
-        [TestMethod]
-        public void CheckLinearIndex()
-        {
-            FieldMatrix fieldMatrix = new FieldMatrix();
-            int counter = 0;
-            for (int i = 0; i < fieldMatrix.Rows; i++)
-            {
-                for (int j = 0; j < fieldMatrix.Columns; j++)
-                {
-                    if (counter != j + (fieldMatrix.Rows * i))
-                    {
-                        throw new ArgumentException("Incorrect linear index!");
-                    }
-
-                    counter++;
-                }
-            }
-        }
-
-
-          
     }
 }

@@ -47,9 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\Engine\IRenderer.cs" />
+    <Compile Include="Contracts\IFieldMatrix.cs" />
     <Compile Include="Contracts\IScoreboard.cs" />
     <Compile Include="Engine\Command.cs" />
     <Compile Include="Engine\ConsoleRenderer.cs" />
+    <Compile Include="Engine\Factories\FieldFactory.cs" />
     <Compile Include="Engine\GameFifteenConstants.cs" />
     <Compile Include="Engine\GameFifteenEngine.cs" />
     <Compile Include="Engine\ExitCommand.cs" />

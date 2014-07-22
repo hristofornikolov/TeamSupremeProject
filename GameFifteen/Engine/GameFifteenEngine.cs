@@ -18,7 +18,7 @@ namespace GameFifteen.Engine
         private static readonly int[] dirRow = { -1, 0, 1, 0 };
         private static readonly int[] dirColumn = { 0, 1, 0, -1 };
 
-        private readonly FieldMatrix field;
+        private readonly IFieldMatrix field;
         private readonly IRenderer renderer;
         private readonly IScoreboard scoreboard;
         private readonly IRandomNumberGenerator random;
@@ -32,7 +32,7 @@ namespace GameFifteen.Engine
         /// Prevents a default instance of the <see cref="GameFifteenEngine"/> class from being created
         /// </summary>
         public GameFifteenEngine(
-            FieldMatrix field,
+            IFieldMatrix field,
             IRenderer renderer,
             IScoreboard scoreboardProxy,
             IRandomNumberGenerator random)
