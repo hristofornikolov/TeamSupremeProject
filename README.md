@@ -28,21 +28,21 @@ Design Patterns implemented so far (20140714-2100):
 
 Creational Patterns:
 
-1) Singleton Pattern
+1) Singleton Pattern - done
 
-2) Simple Factory Pattern
+2) Simple Factory Pattern - done
 
 Behavioral Patterns 
 
-1) Command Pattern
+1) Command Pattern - done
 
-2) Iterator Pattern
+2) Iterator Pattern - done
 
 Structural Patterns
 
-1)
+1) Flyweight Pattern - in process of implementing...
 
-2) Proxy Pattern
+2) Proxy Pattern - done
 
 --------------------------------------------------------
 Unit testing:
