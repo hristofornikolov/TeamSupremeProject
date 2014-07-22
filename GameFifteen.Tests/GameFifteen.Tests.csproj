@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestRestartCommands.cs" />
     <Compile Include="UnitTestFieldFactory.cs" />
     <Compile Include="UnitTestGameEngine.cs" />
     <Compile Include="UnitTestFieldMatrix.cs" />
