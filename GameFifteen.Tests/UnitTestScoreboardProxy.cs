@@ -28,6 +28,25 @@
                 scoreboard.Players[2].Name == "Yasen" && scoreboard.Players[2].Moves == 57);
         }
 
-        
+        [TestMethod]
+        public void CheckIfPlayersListHasCorrectLength()
+        {
+            Player ivan = new Player("Ivan", 43);
+            Player stoyan = new Player("Stoyan", 35);
+            Player yasen = new Player("Yasen", 57);
+            Player peter = new Player("Peter", 17);
+            Player gosho = new Player("Gosho", 38);
+            Player zhechko = new Player("Zhechko", 14);
+
+            ScoreboardProxy scoreboard = new ScoreboardProxy();
+            scoreboard.AddPlayer(ivan);
+            scoreboard.AddPlayer(stoyan);
+            scoreboard.AddPlayer(yasen);
+            scoreboard.AddPlayer(peter);
+            scoreboard.AddPlayer(gosho);
+            scoreboard.AddPlayer(zhechko);
+
+            Assert.AreEqual(scoreboard.Players.Count, 5);
+        }        
     }
 }
