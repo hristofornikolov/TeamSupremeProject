@@ -36,7 +36,7 @@ Behavioral Patterns
 
 1) Command Pattern
 
-2) Strategy Pattern
+2) Iterator Pattern
 
 Structural Patterns
 
