@@ -10,39 +10,41 @@
     using GameFifteen.Extensions;
 
     /// <summary>
-    /// Unit test methods for class ExitCommand
+    /// Unit test methods for class MoveCellCommand
     /// </summary>
     [TestClass]
-    public class UnitTestExitCommand
+    public class UnitTestMoveCellCommand
     {
         [TestMethod]
-        public void CheckIfExitCommandConstructorWorksProperly()
+        public void CheckIfmoveCellCommandCommandConstructorWorksProperly()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            string destination = "restart";
 
-            ExitCommand exitCommand = new ExitCommand(gameEngine);
+            MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
 
-            Assert.IsInstanceOfType(exitCommand, typeof(Command));
+            Assert.IsInstanceOfType(moveCellCommand, typeof(Command));
         }
 
         [TestMethod]
-        public void CheckIfMethodExitExecuteReturnsProperString()
+        public void CheckIfMethodmoveCellCommandExecuteReturnsProperString()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            string destination = "restart";
 
-            ExitCommand exitCommand = new ExitCommand(gameEngine);
+            MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
 
-            string result = exitCommand.Execute();
+            string result = moveCellCommand.Execute();
 
-            Assert.AreEqual(result, "exit");
+            Assert.IsInstanceOfType(result, typeof(String));
         }
     }
 }

@@ -16,7 +16,7 @@
     public class UnitTestTopCommand
     {
         [TestMethod]
-        public void CheckIfCommandConstructorWorksProperly()
+        public void CheckIfTopCommandConstructorWorksProperly()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
@@ -30,7 +30,7 @@
         }
 
         [TestMethod]
-        public void CheckIfMethodExecuteReturnsProperString()
+        public void CheckIfMethodTopExecuteReturnsProperString()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();

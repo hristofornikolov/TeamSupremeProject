@@ -16,7 +16,7 @@
     public class UnitTestRestartCommands
     {
         [TestMethod]
-        public void CheckIfCommandConstructorWorksProperly()
+        public void CheckIfRestartCommandConstructorWorksProperly()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
@@ -30,7 +30,7 @@
         }
 
         [TestMethod]
-        public void CheckIfMethodExecuteReturnsProperString()
+        public void CheckIfMethodRestartExecuteReturnsProperString()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
