@@ -27,14 +27,14 @@ namespace GameFifteen
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
+            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
 
-            var gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
-            Command currentCmd = null;
-            
+            Command currentCmd = null;          
             string input = "restart";
-            string result = string.Empty;
             do
             {
+                string result = string.Empty;
+
                 switch (input)
                 {
                     case "restart":

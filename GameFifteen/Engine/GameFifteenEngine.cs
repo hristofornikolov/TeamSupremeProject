@@ -12,7 +12,7 @@ namespace GameFifteen.Engine
     using GameFifteen.Contracts.Engine;
     using GameFifteen.GameObjects;
     
-    public sealed class GameFifteenEngine
+    public sealed class GameFifteenEngine : IGameEngine
     {
         // All possible directions for moving the cells
         private static readonly int[] dirRow = { -1, 0, 1, 0 };

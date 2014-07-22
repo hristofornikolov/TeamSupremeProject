@@ -2,10 +2,12 @@
 {
     using System;
     using System.Linq;
+    using GameFifteen.Contracts.Engine;
 
     public class ExitCommand : Command
     {
-        public ExitCommand(GameFifteenEngine gameEngine) : base(gameEngine)
+        public ExitCommand(IGameEngine gameEngine)
+            : base(gameEngine)
         {
         }
 

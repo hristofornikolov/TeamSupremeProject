@@ -55,6 +55,7 @@
     <Compile Include="Engine\GameFifteenConstants.cs" />
     <Compile Include="Engine\GameFifteenEngine.cs" />
     <Compile Include="Engine\ExitCommand.cs" />
+    <Compile Include="Contracts\Engine\IGameEngine.cs" />
     <Compile Include="Engine\MoveCellCommand.cs" />
     <Compile Include="Engine\TopCommand.cs" />
     <Compile Include="Engine\RestartCommand.cs" />

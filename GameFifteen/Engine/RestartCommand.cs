@@ -2,10 +2,12 @@
 {
     using System;
     using System.Linq;
+    using GameFifteen.Contracts.Engine;
 
     public class RestartCommand : Command
     {
-        public RestartCommand(GameFifteenEngine gameEngine) : base(gameEngine)
+        public RestartCommand(IGameEngine gameEngine)
+            : base(gameEngine)
         {
         }
 

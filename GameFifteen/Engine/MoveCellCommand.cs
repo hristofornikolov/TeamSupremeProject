@@ -2,10 +2,11 @@
 {
     using System;
     using System.Linq;
+    using GameFifteen.Contracts.Engine;
 
     public class MoveCellCommand : Command
     {
-        public MoveCellCommand(GameFifteenEngine gameEngine, string destination) : base(gameEngine)
+        public MoveCellCommand(IGameEngine gameEngine, string destination) : base(gameEngine)
         {
             this.Destination = destination;
         }

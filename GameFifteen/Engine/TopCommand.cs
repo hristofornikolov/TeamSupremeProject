@@ -2,10 +2,12 @@
 {
     using System;
     using System.Linq;
+    using GameFifteen.Contracts.Engine;
 
     public class TopCommand : Command
     {
-        public TopCommand(GameFifteenEngine gameEngine) : base(gameEngine)
+        public TopCommand(IGameEngine gameEngine)
+            : base(gameEngine)
         {
         }
 

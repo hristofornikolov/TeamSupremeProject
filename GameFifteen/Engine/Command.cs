@@ -6,14 +6,16 @@
 
 namespace GameFifteen.Engine
 {
+    using GameFifteen.Contracts.Engine;
+
     /// <summary>
     /// Abstract class that defines specific commands
     /// </summary>
     public abstract class Command
     {
-        protected GameFifteenEngine gameEngine;
+        protected IGameEngine gameEngine;
 
-        protected Command(GameFifteenEngine gameEngine)
+        protected Command(IGameEngine gameEngine)
         {
             this.gameEngine = gameEngine;
         }
