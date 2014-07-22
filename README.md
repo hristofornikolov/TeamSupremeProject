@@ -30,17 +30,17 @@ Creational Patterns:
 
 1) Singleton Pattern
 
-2) 
+2) Simple Factory Pattern
 
 Behavioral Patterns 
 
 1) Command Pattern
 
-2) 
+2) Strategy Pattern
 
 Structural Patterns
 
-1) Facade Pattern
+1)
 
 2) Proxy Pattern
 
