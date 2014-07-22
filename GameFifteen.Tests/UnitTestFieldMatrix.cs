@@ -36,5 +36,24 @@
             Assert.AreEqual(testlength, fieldMatrix.Length);
 
         }
+
+        [TestMethod]
+        public void CheckLinearIndex()
+        {
+            FieldMatrix fieldMatrix = new FieldMatrix();
+            int counter = 0;
+            for (int i = 0; i < fieldMatrix.Rows; i++)
+            {
+                for (int j = 0; j < fieldMatrix.Columns; j++)
+                {
+                    if (counter != j + (fieldMatrix.Rows * i))
+                    {
+                        throw new ArgumentException("Incorrect linear index!");
+                    }
+
+                    counter++;
+                }
+            }
+        }
     }
 }
