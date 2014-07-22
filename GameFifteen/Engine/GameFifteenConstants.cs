@@ -26,8 +26,6 @@ namespace GameFifteen.Engine
         // 2, 2 is for testing purposes only
         internal const int FieldMinimumShuffles = 2;
         internal const int FieldMaximumShuffles = 2; 
-        internal const int FieldInitialRows = 4;
-        internal const int FieldInitialColumns = 4;
 
         internal const string ScoreboardTitle = "Scoreboard:";
         internal const string ScoreboardView = "{0}. {1} --> {2} moves";

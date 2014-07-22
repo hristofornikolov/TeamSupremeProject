@@ -36,7 +36,7 @@ namespace GameFifteen.GameObjects
         {
             get
             {
-                return GameFifteenConstants.FieldInitialRows;
+                return this.matrix.GetLength(0);
             }
         }
 
@@ -47,7 +47,7 @@ namespace GameFifteen.GameObjects
         {
             get
             {
-                return GameFifteenConstants.FieldInitialColumns;
+                return this.matrix.GetLength(1);
             }
         }
 
@@ -75,9 +75,9 @@ namespace GameFifteen.GameObjects
                 bool isMatch = false;
                 int currentIndex = 0;
 
-                for (int i = 0; i < GameFifteenConstants.FieldInitialRows; i++)
+                for (int i = 0; i < this.Rows; i++)
                 {
-                    for (int j = 0; j < GameFifteenConstants.FieldInitialColumns; j++)
+                    for (int j = 0; j < this.Columns; j++)
                     {
                         if (currentIndex == index)
                         {
@@ -101,9 +101,9 @@ namespace GameFifteen.GameObjects
             set
             {
                 int currentIndex = 0;
-                for (int i = 0; i < GameFifteenConstants.FieldInitialRows; i++)
+                for (int i = 0; i < this.Rows; i++)
                 {
-                    for (int j = 0; j < GameFifteenConstants.FieldInitialColumns; j++)
+                    for (int j = 0; j < this.Columns; j++)
                     {
                         if (currentIndex == index)
                         {

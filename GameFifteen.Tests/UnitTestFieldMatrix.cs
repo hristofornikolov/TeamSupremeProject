@@ -55,5 +55,22 @@
                 }
             }
         }
+
+        [TestMethod]
+        public void CheckGetterandSetter()
+        {
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
+            fieldMatrix[1, 1] = 7;
+            Assert.AreEqual(7, fieldMatrix[1, 1]);
+        }
+
+        [TestMethod]
+        public void CheckGetterandSetterViaTheNewIndex()
+        {
+            FieldMatrix fieldMatrix = new FieldMatrix(4, 4);
+            fieldMatrix[8] = 12;
+            Assert.AreEqual(12, fieldMatrix[8]);
+        }
+
     }
 }
