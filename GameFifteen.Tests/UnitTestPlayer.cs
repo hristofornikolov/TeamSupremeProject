@@ -3,10 +3,9 @@
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.GameObjects;
-    using GameFifteen.Engine;
 
     /// <summary>
-    /// Summary description for UnitTestPlayer
+    /// Unit test for checking class Player.cs
     /// </summary>
     [TestClass]
     public class UnitTestPlayer
@@ -32,7 +31,7 @@
         [TestMethod]
         public void CheckIfPlayerNameIsEmpty()
         {
-            string playerName = "";
+            string playerName = string.Empty;
 
             Player player = new Player(playerName, 5);
 

@@ -55,6 +55,7 @@
     <Compile Include="UnitTestFieldMatrix.cs" />
     <Compile Include="UnitTestPlayer.cs" />
     <Compile Include="UnitTestRandomGenerator.cs" />
+    <Compile Include="UnitTestScoreboard.cs" />
     <Compile Include="UnitTestScoreboardProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
