@@ -1,9 +1,9 @@
 ﻿namespace GameFifteen.Engine.Factories
 {
-    using GameFifteen.Contracts;
-    using GameFifteen.GameObjects;
     using System;
     using System.Linq;
+    using GameFifteen.Contracts;
+    using GameFifteen.GameObjects;
 
     public sealed class FieldFactory
     {

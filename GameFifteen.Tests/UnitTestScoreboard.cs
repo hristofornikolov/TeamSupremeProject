@@ -19,6 +19,6 @@
             scoreboard.AddPlayer(player);
 
             Assert.AreEqual(1, scoreboard.Players.Count);
-        }
+        }        
     }
 }

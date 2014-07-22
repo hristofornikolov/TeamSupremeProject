@@ -1,9 +1,10 @@
 ﻿namespace GameFifteen.Tests
 {
     using System;
-    using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.GameObjects;
+    using System.Collections.Generic;
+    using GameFifteen.Contracts;
 
     /// <summary>
     /// Summary description for ScoreboardProxy
@@ -47,6 +48,14 @@
             scoreboard.AddPlayer(zhechko);
 
             Assert.AreEqual(scoreboard.Players.Count, 5);
-        }        
+        }
+
+        [TestMethod]
+        public void CheckIfPlayerListInScoreboardIsWithCorrectType()
+        {
+            ScoreboardProxy scoreboard = new ScoreboardProxy();
+
+            Assert.IsInstanceOfType(scoreboard.Players, typeof(IList<IPlayer>));
+        }
     }
 }
