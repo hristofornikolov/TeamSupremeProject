@@ -8,7 +8,7 @@
     public class UnitTestFieldMatrix
     {
         [TestMethod]
-        public void TestNewFieldMatrixConstructorCorrectSize()
+        public void CheckNewFieldMatrixConstructorCorrectSize()
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
             Assert.AreEqual(4, fieldMatrix.Rows);
@@ -16,34 +16,48 @@
         }
 
         [TestMethod]
-        public void TestNewFieldMatrixConstructorCorrectInitialization()
+        public void CheckNewFieldMatrixConstructorCorrectInitialization()
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
-            for (int i = 0; i < fieldMatrix.Rows; i++)
+
+            foreach (var cell in fieldMatrix)
             {
-                for (int j = 0; j < fieldMatrix.Columns; j++)
-                {
-                    if (fieldMatrix[i, j] != 0)
+                if (cell != 0)
                     {
                         throw new ArgumentException("When initialized, a cell value must be equal to zero!");
                     }
-                }
             }
 
+            //for (int i = 0; i < fieldMatrix.Rows; i++)
+            //{
+            //    for (int j = 0; j < fieldMatrix.Columns; j++)
+            //    {
+            //        if (fieldMatrix[i, j] != 0)
+            //        {
+            //            throw new ArgumentException("When initialized, a cell value must be equal to zero!");
+            //        }
+            //    }
+            //}
         }
 
         [TestMethod]
-        public void TestNewFieldMatrixLengthPropertyValidity()
+        public void CheckNewFieldMatrixLengthPropertyValidity()
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
             int testlength = 16;
             Assert.AreEqual(testlength, fieldMatrix.Length);
         }
 
+        [TestMethod]
+        public void CheckEnumerator()
+        {
+            FieldMatrix fieldMatrix = new FieldMatrix();
 
 
 
+        }
 
 
+          
     }
 }
