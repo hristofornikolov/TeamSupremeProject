@@ -4,10 +4,9 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.Engine.Factories;
     using GameFifteen.Contracts;
-    using GameFifteen.GameObjects;
 
     /// <summary>
-    /// Summary description for UnitTestFieldFactory
+    /// Unit test methods for class FieldFactory
     /// </summary>
     [TestClass]
     public class UnitTestFieldFactory

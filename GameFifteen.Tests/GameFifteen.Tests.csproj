@@ -51,6 +51,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestExitCommand.cs" />
     <Compile Include="UnitTestRestartCommands.cs" />
     <Compile Include="UnitTestFieldFactory.cs" />
     <Compile Include="UnitTestGameEngine.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="UnitTestScoreboard.cs" />
     <Compile Include="UnitTestScoreboardProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestTopCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameFifteen\GameFifteen.csproj">

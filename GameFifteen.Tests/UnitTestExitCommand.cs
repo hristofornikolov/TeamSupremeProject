@@ -4,19 +4,19 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.Contracts;
     using GameFifteen.Contracts.Engine;
-    using GameFifteen.Engine.Factories;
     using GameFifteen.Engine;
+    using GameFifteen.Engine.Factories;
     using GameFifteen.GameObjects;
     using GameFifteen.Extensions;
 
     /// <summary>
-    /// Unit test methods for class RestartCommands
+    /// Unit test methods for class ExitCommand
     /// </summary>
     [TestClass]
-    public class UnitTestRestartCommands
+    public class UnitTestExitCommand
     {
         [TestMethod]
-        public void CheckIfCommandConstructorWorksProperly()
+        public void CheckIfExitCommandConstructorWorksProperly()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
@@ -24,9 +24,9 @@
             IRandomNumberGenerator random = new RandomNumberGenerator();
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
 
-            RestartCommand restartCommand = new RestartCommand(gameEngine);
+            ExitCommand exitCommand = new ExitCommand(gameEngine);
 
-            Assert.IsInstanceOfType(restartCommand, typeof(Command));
+            Assert.IsInstanceOfType(exitCommand, typeof(Command));
         }
 
         [TestMethod]
@@ -38,11 +38,11 @@
             IRandomNumberGenerator random = new RandomNumberGenerator();
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
 
-            RestartCommand restartCommand = new RestartCommand(gameEngine);
+            ExitCommand exitCommand = new ExitCommand(gameEngine);
 
-            string result = restartCommand.Execute();
+            string result = exitCommand.Execute();
 
-            Assert.IsInstanceOfType(result, typeof(String));
+            Assert.AreEqual(result, "exit");
         }
     }
 }
