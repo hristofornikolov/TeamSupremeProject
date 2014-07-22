@@ -60,5 +60,3 @@ Player class - done, 20140722-1800
 GameEngine class - !!!
 
 GameEngine Factories class - !!!
-
-We should discuss how to test the GameEngine, because its methods are private.
