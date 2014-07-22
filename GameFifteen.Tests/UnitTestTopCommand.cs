@@ -30,6 +30,22 @@
         }
 
         [TestMethod]
+        public void CheckIfMethodTopExecuteReturnsProperEmptyString()
+        {
+            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IRenderer renderer = new ConsoleRenderer();
+            IScoreboard scoreboard = new ScoreboardProxy();
+            IRandomNumberGenerator random = new RandomNumberGenerator();
+            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+
+            TopCommand topCommand = new TopCommand(gameEngine);
+
+            string result = topCommand.Execute();
+
+            Assert.IsInstanceOfType(result, typeof(String));
+        }
+
+        [TestMethod]
         public void CheckIfMethodTopExecuteReturnsProperString()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
@@ -39,6 +55,8 @@
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
 
             TopCommand topCommand = new TopCommand(gameEngine);
+            Player player = new Player("Pesho", 4);
+            scoreboard.AddPlayer(player);
 
             string result = topCommand.Execute();
 

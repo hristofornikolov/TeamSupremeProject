@@ -31,7 +31,7 @@
         }
 
         [TestMethod]
-        public void CheckIfMethodmoveCellCommandExecuteReturnsProperString()
+        public void CheckIfMethodMoveCellCommandExecuteReturnsProperString()
         {
             IFieldMatrix field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
@@ -39,6 +39,23 @@
             IRandomNumberGenerator random = new RandomNumberGenerator();
             IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
             string destination = "restart";
+
+            MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
+
+            string result = moveCellCommand.Execute();
+
+            Assert.IsInstanceOfType(result, typeof(String));
+        }
+
+        [TestMethod]
+        public void CheckIfMethodMoveCellCommandExecuteReturnsProperStringTwo()
+        {
+            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IRenderer renderer = new ConsoleRenderer();
+            IScoreboard scoreboard = new ScoreboardProxy();
+            IRandomNumberGenerator random = new RandomNumberGenerator();
+            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            string destination = "9";
 
             MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
 

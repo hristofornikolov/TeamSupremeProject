@@ -8,10 +8,12 @@ namespace GameFifteen.Engine
 {
     using System;
     using GameFifteen.Contracts.Engine;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Defines the renderer
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class ConsoleRenderer : IRenderer
     {
         /// <summary>
