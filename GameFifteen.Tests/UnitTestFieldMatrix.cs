@@ -16,7 +16,6 @@
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestNewFieldMatrixConstructorCorrectInitialization()
         {
             FieldMatrix fieldMatrix = new FieldMatrix();
