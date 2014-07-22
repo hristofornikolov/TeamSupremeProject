@@ -45,12 +45,20 @@ Structural Patterns
 2) Proxy Pattern
 
 --------------------------------------------------------
-Unit testing
+Unit testing:
 
-ScoreboardProxy class -
+ScoreboardProxy class - done, 20140722-1800
 
-FieldMatrix class - 
+Scoreboard class - done, 20140722-1800
 
-GameEngine class -
+FieldMatrix class - done, 20140722-1800
+
+Random Generator class - done, 20140722-1800
+
+Player class - done, 20140722-1800
+
+GameEngine class - !!!
+
+GameEngine Factories class - !!!
 
 We should discuss how to test the GameEngine, because its methods are private.
