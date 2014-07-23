@@ -64,9 +64,13 @@
     <Compile Include="UnitTestTopCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameFifteen\GameFifteen.csproj">
+    <ProjectReference Include="..\GameFifteen.Common\GameFifteen.Common.csproj">
       <Project>{ee945dfb-a7c6-48b5-a3ed-9079c6fa71b4}</Project>
-      <Name>GameFifteen</Name>
+      <Name>GameFifteen.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameFIfteen.UI\GameFifteen.UI.csproj">
+      <Project>{d610aa9f-04b2-4295-baa0-ff402f44ae8e}</Project>
+      <Name>GameFifteen.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

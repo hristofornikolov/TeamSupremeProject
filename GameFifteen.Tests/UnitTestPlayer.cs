@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteen.GameObjects;
+    using GameFifteen.Common;
 
     /// <summary>
     /// Unit test for checking class Player.cs

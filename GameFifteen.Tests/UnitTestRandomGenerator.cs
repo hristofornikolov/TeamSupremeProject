@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteen.Extensions;
+    using GameFifteen.Common;
 
     /// <summary>
     /// Summary description for UnitTestRandomGenerator

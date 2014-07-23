@@ -1,10 +1,10 @@
 ﻿namespace GameFifteen.Tests
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteen.GameObjects;
     using System.Collections.Generic;
-    using GameFifteen.Contracts;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using GameFifteen.Common;
+    using GameFifteen.Common.Contracts;
 
     /// <summary>
     /// Summary description for ScoreboardProxy

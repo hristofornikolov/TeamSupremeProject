@@ -2,8 +2,8 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteen.Engine.Factories;
-    using GameFifteen.Contracts;
+    using GameFifteen.Common.Engine.Factories;
+    using GameFifteen.Common.Contracts;
 
     /// <summary>
     /// Unit test methods for class FieldFactory
@@ -24,33 +24,33 @@
         [TestMethod]
         public void CheckIfGetFieldReturnsProperMatrixWithFourRowsAndColumns()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(4);
+            IMatrixField field = FieldFactory.Instance.GetField(4);
 
-            Assert.IsInstanceOfType(field, typeof(IFieldMatrix));
+            Assert.IsInstanceOfType(field, typeof(IMatrixField));
         }
 
         [TestMethod]
         public void CheckIfGetFieldReturnsProperMatrixWithFiveRowsAndColumns()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IMatrixField field = FieldFactory.Instance.GetField(5);
 
-            Assert.IsInstanceOfType(field, typeof(IFieldMatrix));
+            Assert.IsInstanceOfType(field, typeof(IMatrixField));
         }
 
         [TestMethod]
         public void CheckIfGetFieldReturnsProperMatrixWithSixRowsAndColumns()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(6);
+            IMatrixField field = FieldFactory.Instance.GetField(6);
 
-            Assert.IsInstanceOfType(field, typeof(IFieldMatrix));
+            Assert.IsInstanceOfType(field, typeof(IMatrixField));
         }
 
         [TestMethod]
         public void CheckIfGetFieldReturnsProperMatrixWithDefaultRowsAndColumns()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(9);
+            IMatrixField field = FieldFactory.Instance.GetField(9);
 
-            Assert.IsInstanceOfType(field, typeof(IFieldMatrix));
+            Assert.IsInstanceOfType(field, typeof(IMatrixField));
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿namespace GameFifteen.Tests
 {
     using System;
+    using GameFifteen.UI;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using GameFifteen.Contracts;
-    using GameFifteen.Contracts.Engine;
-    using GameFifteen.Engine;
-    using GameFifteen.Engine.Factories;
-    using GameFifteen.GameObjects;
-    using GameFifteen.Extensions;
+    using GameFifteen.Common.Contracts;
+    using GameFifteen.Common.Contracts.Engine;
+    using GameFifteen.Common.Engine;
+    using GameFifteen.Common.Engine.Factories;
+    using GameFifteen.Common;
 
     /// <summary>
     /// Unit test methods for class TopCommand
@@ -18,7 +18,7 @@
         [TestMethod]
         public void CheckIfTopCommandConstructorWorksProperly()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IMatrixField field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
@@ -32,7 +32,7 @@
         [TestMethod]
         public void CheckIfMethodTopExecuteReturnsProperEmptyString()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IMatrixField field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
@@ -48,7 +48,7 @@
         [TestMethod]
         public void CheckIfMethodTopExecuteReturnsProperString()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IMatrixField field = FieldFactory.Instance.GetField(5);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
