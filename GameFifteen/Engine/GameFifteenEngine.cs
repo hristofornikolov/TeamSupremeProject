@@ -11,7 +11,8 @@ namespace GameFifteen.Engine
     using GameFifteen.Contracts;
     using GameFifteen.Contracts.Engine;
     using GameFifteen.GameObjects;
-    
+    using GameFifteen.Engine.Factories;
+
     public sealed class GameFifteenEngine : IGameEngine
     {
         // All possible directions for moving the cells
@@ -91,6 +92,22 @@ namespace GameFifteen.Engine
 
             this.emptyCellRow = newRow;
             this.emptyCellColumn = newCol;
+        }
+
+        private string GetNumberAsString(int number)
+        {
+            if (number == this.emptyCellValue)
+            {
+                return string.Empty;
+            }
+
+            var numberAsString = new StringBuilder();
+            foreach (var digit in number.ToString())
+            {
+                numberAsString.Append(NumberFactory.Instance.GetDigit(digit));
+            }
+
+            return numberAsString.ToString();
         }
 
         /// <summary>
@@ -216,7 +233,6 @@ namespace GameFifteen.Engine
             output.AppendLine(GameFifteenConstants.RestartCmdDescriptionMessage);
             output.AppendLine(GameFifteenConstants.TopCmdDescriptionMessage);
             output.AppendLine(GameFifteenConstants.ExitCmdDescriptionMessage);
-
             return output.ToString();
         }
 
@@ -228,23 +244,14 @@ namespace GameFifteen.Engine
         {
             var output = new StringBuilder();
             output.AppendLine(" -------------");
+
             for (int i = 0; i < this.field.Rows; i++)
             {
                 output.Append("|");
                 for (int j = 0; j < this.field.Columns; j++)
                 {
-                    if (this.field[i, j] <= 9)
-                    {
-                        output.AppendFormat("  {0}", this.field[i, j]);
-                    }
-                    else if (this.field[i, j] == this.emptyCellValue)
-                    {
-                        output.Append("   ");
-                    }
-                    else
-                    {
-                        output.AppendFormat(" {0}", this.field[i, j]);
-                    }
+                    var numberAsString = GetNumberAsString(this.field[i, j]);
+                    output.AppendFormat("{0,3}", numberAsString);
 
                     if (j == this.field.Columns - 1)
                     {
@@ -254,7 +261,6 @@ namespace GameFifteen.Engine
             }
 
             output.AppendLine(" -------------");
-
             return output.ToString();
         }
 

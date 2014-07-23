@@ -23,7 +23,7 @@ namespace GameFifteen
         /// </summary>
         public static void Main()
         {
-            IFieldMatrix field = FieldFactory.Instance.GetField(5);
+            IFieldMatrix field = FieldFactory.Instance.GetField(4);
             IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();

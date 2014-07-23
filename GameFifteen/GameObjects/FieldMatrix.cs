@@ -8,7 +8,6 @@ namespace GameFifteen.GameObjects
 { 
     using System.Collections;
     using System.Collections.Generic;
-    using GameFifteen.Engine;
     using GameFifteen.Contracts;
 
     /// <summary>

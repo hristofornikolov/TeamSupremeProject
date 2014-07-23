@@ -13,7 +13,7 @@ namespace GameFifteen.GameObjects
     /// <summary>
     /// Display the scoreboard
     /// </summary>
-    public class Scoreboard : IScoreboard
+    internal class Scoreboard : IScoreboard
     {
         /// <summary>
         /// List with all players
@@ -23,7 +23,7 @@ namespace GameFifteen.GameObjects
         /// <summary>
         /// Initializes a new instance of the <see cref="Scoreboard"/> class
         /// </summary>
-        public Scoreboard()
+        internal Scoreboard()
         {
             this.players = new List<IPlayer>();
         }
