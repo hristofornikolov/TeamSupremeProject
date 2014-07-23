@@ -11,10 +11,12 @@ namespace GameFifteen.UI
     using GameFifteen.Common.Contracts.Engine;
     using GameFifteen.Common.Engine;
     using GameFifteen.Common.Engine.Factories;
+    using System.Diagnostics.CodeAnalysis;
     
     /// <summary>
     /// This is the start point of the game.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class GameFifteenProgram
     {
         /// <summary>
