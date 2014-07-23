@@ -40,7 +40,7 @@ Behavioral Patterns
 
 Structural Patterns
 
-1) Flyweight Pattern - in process of implementing...
+1) Flyweight Pattern - done
 
 2) Proxy Pattern - done
 
