@@ -49,7 +49,7 @@ namespace GameFifteen.Common
             this.CheckIfScoreboardIsActive();
 
             this.realScoreboard.AddPlayer(player);
-            if (this.realScoreboard.Players.Count > EngineConstants.ScoreboardTopPlayersCount)
+            if (this.realScoreboard.Players.Count > GlobalConstants.ScoreboardTopPlayersCount)
             {
                 this.RemoveWorstPlayer();
             }

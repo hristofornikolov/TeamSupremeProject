@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ConsoleRenderer.cs" company="TeamSupreme">
+// <copyright file="InputHandler.cs" company="TeamSupreme">
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -11,18 +11,18 @@ namespace GameFifteen.UI
     using GameFifteen.Common.Contracts.Engine;
 
     /// <summary>
-    /// Defines the renderer
+    /// Defines the input handler
     /// </summary>
     [ExcludeFromCodeCoverage]
-    public class ConsoleRenderer : IRenderer
+    public class InputHandler : IInputHandler
     {
         /// <summary>
-        /// Console writing method
+        /// Input reading method
         /// </summary>
-        /// <param name="output">The output written</param>
-        public void Output(string output)
+        /// <returns>The input read</returns>
+        public string GetInput()
         {
-            Console.Write(output);
+            return Console.ReadLine();
         }
     }
 }

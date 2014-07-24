@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputHandler.cs" />
     <Compile Include="ConsoleRenderer.cs" />
+    <Compile Include="GameController.cs" />
     <Compile Include="GameFifteenProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagramUI.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameFifteen.Common\GameFifteen.Common.csproj">

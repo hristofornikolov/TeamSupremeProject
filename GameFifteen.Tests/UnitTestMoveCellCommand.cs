@@ -1,7 +1,6 @@
 ﻿namespace GameFifteen.Tests
 {
     using System;
-    using GameFifteen.UI;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.Common.Contracts;
     using GameFifteen.Common.Contracts.Engine;
@@ -19,10 +18,9 @@
         public void CheckIfmoveCellCommandCommandConstructorWorksProperly()
         {
             IMatrixField field = FieldFactory.Instance.GetField(5);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
             string destination = "restart";
 
             MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
@@ -34,10 +32,9 @@
         public void CheckIfMethodMoveCellCommandExecuteReturnsProperString()
         {
             IMatrixField field = FieldFactory.Instance.GetField(5);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
             string destination = "restart";
 
             MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);
@@ -51,10 +48,9 @@
         public void CheckIfMethodMoveCellCommandExecuteReturnsProperStringTwo()
         {
             IMatrixField field = FieldFactory.Instance.GetField(5);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
             string destination = "9";
 
             MoveCellCommand moveCellCommand = new MoveCellCommand(gameEngine, destination);

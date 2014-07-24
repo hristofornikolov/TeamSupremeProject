@@ -5,6 +5,11 @@ namespace GameFifteen.Common.Contracts.Engine
     public interface IGameEngine
     {
         /// <summary>
+        /// Get player moves count
+        /// </summary>
+        int PlayerMoves { get; }
+
+        /// <summary>
         /// Restarts the game and initializes the field.
         /// </summary>
         string Restart();
@@ -34,25 +39,25 @@ namespace GameFifteen.Common.Contracts.Engine
         /// Draws/writes the starting screen description message.
         /// </summary>
         /// <returns>All the text of the starting screen</returns>
-        string ShowStartScreen();
+        string GetStartScreen();
 
         /// <summary>
         /// Returns the matrix itself.
         /// </summary>
         /// <returns>The matrix as a string</returns>
-        string ShowField();
+        string GetField();
 
         /// <summary>
         /// Creates the scoreboard and shows it upon game end.
         /// </summary>
         /// <returns>The scoreboard as a string</returns>
-        string ShowScoreboard();
+        string GetScoreboard();
 
         /// <summary>
         /// Ends the game and asks the player for his name.
         /// </summary>
         /// <returns>The desired command</returns>
-        void FinishGame();
+        bool IsFieldArrange();
 
         /// <summary>
         /// Saves the player's score

@@ -1,7 +1,6 @@
 ﻿namespace GameFifteen.Tests
 {
     using System;
-    using GameFifteen.UI;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using GameFifteen.Common.Contracts;
     using GameFifteen.Common.Contracts.Engine;
@@ -19,10 +18,9 @@
         public void CheckIfExitCommandConstructorWorksProperly()
         {
             IMatrixField field = FieldFactory.Instance.GetField(5);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
 
             ExitCommand exitCommand = new ExitCommand(gameEngine);
 
@@ -33,16 +31,15 @@
         public void CheckIfMethodExitExecuteReturnsProperString()
         {
             IMatrixField field = FieldFactory.Instance.GetField(5);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
 
             ExitCommand exitCommand = new ExitCommand(gameEngine);
 
             string result = exitCommand.Execute();
 
-            Assert.AreEqual(result, "exit");
+            Assert.AreEqual(result, GlobalConstants.ExitMessage);
         }
     }
 }

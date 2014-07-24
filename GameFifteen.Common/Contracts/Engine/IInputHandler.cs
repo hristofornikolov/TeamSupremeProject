@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IRenderer.cs" company="TeamSupreme">
+// <copyright file="IInputHandler.cs" company="TeamSupreme">
 //     Copyright TeamSupreme. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -7,14 +7,14 @@
 namespace GameFifteen.Common.Contracts.Engine
 {
     /// <summary>
-    /// Renderers interface
+    /// Input readers interface
     /// </summary>
-    public interface IRenderer
+    public interface IInputHandler
     {
         /// <summary>
-        /// Output writing method
+        /// Input reading method
         /// </summary>
-        /// <param name="result">The output written</param>
-        void Output(string result);
+        /// <returns>The input read</returns>
+        string GetInput();
     }
 }

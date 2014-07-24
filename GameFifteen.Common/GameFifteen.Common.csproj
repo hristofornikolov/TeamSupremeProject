@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Engine\IGameController.cs" />
+    <Compile Include="Contracts\Engine\IInputHandler.cs" />
     <Compile Include="Contracts\Engine\IRenderer.cs" />
     <Compile Include="Contracts\IMatrixField.cs" />
     <Compile Include="Contracts\IScoreboard.cs" />
@@ -83,7 +85,7 @@
     <Compile Include="Engine\Flyweight\Digit3.cs" />
     <Compile Include="Engine\Flyweight\Digit2.cs" />
     <Compile Include="Engine\Flyweight\Digit1.cs" />
-    <Compile Include="Engine\EngineConstants.cs" />
+    <Compile Include="Engine\GlobalConstants.cs" />
     <Compile Include="Engine\GameFifteenEngine.cs" />
     <Compile Include="Engine\ExitCommand.cs" />
     <Compile Include="Contracts\Engine\IGameEngine.cs" />
@@ -104,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagramGameFifteen.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,7 +47,7 @@ namespace GameFifteen.Common
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    value = EngineConstants.PlayerUnknownName;
+                    value = GlobalConstants.PlayerUnknownName;
                 }
 
                 this.name = value;

@@ -25,41 +25,15 @@ namespace GameFifteen.UI
         public static void Main()
         {
             IMatrixField field = FieldFactory.Instance.GetField(4);
-            IRenderer renderer = new ConsoleRenderer();
             IScoreboard scoreboard = new ScoreboardProxy();
             IRandomNumberGenerator random = new RandomNumberGenerator();
-            IGameEngine gameEngine = new GameFifteenEngine(field, renderer, scoreboard, random);
+            IGameEngine gameEngine = new GameFifteenEngine(field, scoreboard, random);
 
-            Command currentCmd = null;          
-            string input = "restart";
-            do
-            {
-                string result = string.Empty;
+            IRenderer renderer = new ConsoleRenderer();
+            IInputHandler inputHandler = new InputHandler();
+            IGameController gameFifteenControl = new GameController(gameEngine, inputHandler, renderer);
 
-                switch (input)
-                {
-                    case "restart":
-                        currentCmd = new RestartCommand(gameEngine);
-                        result = currentCmd.Execute();
-                        break;
-                    case "exit":
-                        currentCmd = new ExitCommand(gameEngine);
-                        result = currentCmd.Execute();
-                        break;
-                    case "top":
-                        currentCmd = new TopCommand(gameEngine);
-                        result = currentCmd.Execute();
-                        break;
-                    default:
-                        currentCmd = new MoveCellCommand(gameEngine, input);
-                        result = currentCmd.Execute();
-                        break;
-                }
-
-                renderer.Output(result);
-                input = renderer.Input();
-            }
-            while (input != "exit");
+            gameFifteenControl.Start();
         }
     }
 }

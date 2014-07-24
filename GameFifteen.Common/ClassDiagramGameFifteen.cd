@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameFifteen.Common.Engine.Command" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Command.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.ExitCommand" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\ExitCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.GameFifteenEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kACAAAAAqCAEAAABAAAAcIAAEAIMiAIAIAQAIAAAAgA=</HashCode>
+      <FileName>Engine\GameFifteenEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.GlobalConstants" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAUIAAgIAAIIgAAAACAAAQBAgCQAAAAIA=</HashCode>
+      <FileName>Engine\GlobalConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.MoveCellCommand" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\MoveCellCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.RestartCommand" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\RestartCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.TopCommand" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\TopCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Factories.FieldFactory" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Factories\FieldFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Factories.NumberFactory" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAABBAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Factories\NumberFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit0" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit0.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit1" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit2" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit3" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit4" Collapsed="true">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit5" Collapsed="true">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit6" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit6.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit7" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit7.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit8" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit8.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.Engine.Flyweight.Digit9" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Flyweight\Digit9.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFifteen.Common.MatrixField" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAFAACAAAACBAAAAAAAAEAAAAAAgAAAA=</HashCode>
+      <FileName>MatrixField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFifteen.Common.Player" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAQAAEAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFifteen.Common.RandomNumberGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RandomNumberGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFifteen.Common.Scoreboard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAgAAAAAAAA=</HashCode>
+      <FileName>Scoreboard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GameFifteen.Common.ScoreboardProxy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAQAAAAAAAAAAAAAAgBAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ScoreboardProxy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="GameFifteen.Common.Contracts.Engine.IGameController" Collapsed="true">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Engine\IGameController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.Engine.IGameEngine" Collapsed="true">
+    <Position X="25.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAoAAAAAABAAAAAAAAEAIMiAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Engine\IGameEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.Engine.IInputHandler" Collapsed="true">
+    <Position X="27.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Engine\IInputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.Engine.IRenderer" Collapsed="true">
+    <Position X="24" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\Engine\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.IMatrixField" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAACAAAAABAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Contracts\IMatrixField.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.IPlayer" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.IRandomNumberGenerator" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IRandomNumberGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GameFifteen.Common.Contracts.IScoreboard" Collapsed="true">
+    <Position X="25.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Contracts\IScoreboard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
