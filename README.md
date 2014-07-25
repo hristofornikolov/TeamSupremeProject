@@ -57,6 +57,6 @@ Random Generator class - done, 20140722-1800
 
 Player class - done, 20140722-1800
 
-GameEngine class - !!!
+GameEngine class - done
 
-GameEngine Factories class - !!!
+GameEngine Factories class - done
