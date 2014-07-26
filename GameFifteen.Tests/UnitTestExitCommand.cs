@@ -1,4 +1,10 @@
-﻿namespace GameFifteen.Tests
+﻿//-----------------------------------------------------------------------
+// <copyright file="UnitTestExitCommands.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+namespace GameFifteen.Tests
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

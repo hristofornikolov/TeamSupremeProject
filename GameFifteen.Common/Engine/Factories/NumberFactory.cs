@@ -1,4 +1,10 @@
-﻿namespace GameFifteen.Common.Engine.Factories
+﻿//-----------------------------------------------------------------------
+// <copyright file="NumberFactory.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//--------------------------------------------------------------------
+
+namespace GameFifteen.Common.Engine.Factories
 {
     using System;
     using System.Collections.Generic;
@@ -10,16 +16,26 @@
     /// </summary>
     internal sealed class NumberFactory
     {
+        /// <summary>
+        /// Dictionary type of field to keep pairs of the chars and Digit objects
+        /// </summary>
         private readonly Dictionary<char, Digit> digits = new Dictionary<char, Digit>();
 
+        /// <summary>
+        /// Instance of the NumberFactory class
+        /// </summary>
         private static NumberFactory instance;
 
+        /// <summary>
+        /// Prevents a default instance of the 
+        /// <see cref="NumberFactory" /> class from being created.
+        /// </summary>
         private NumberFactory()
         {
         }
 
         /// <summary>
-        /// Returns the singleton instance
+        /// Gets the singleton instance
         /// </summary>
         public static NumberFactory Instance
         {
@@ -37,7 +53,7 @@
         /// <summary>
         /// Gets digit's reference
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">The character of the digit</param>
         /// <returns>Given digit's reference</returns>
         public Digit GetDigit(char key)
         {

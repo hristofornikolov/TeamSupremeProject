@@ -1,4 +1,10 @@
-﻿namespace GameFifteen.Tests
+﻿//-----------------------------------------------------------------------
+// <copyright file="UnitTestRandomGenerator.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+namespace GameFifteen.Tests
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

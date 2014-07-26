@@ -13,13 +13,24 @@ namespace GameFifteen.Common.Engine
     /// </summary>
     public abstract class Command
     {
+        /// <summary>
+        /// Abstract field of IGameEngine
+        /// </summary>
         protected IGameEngine gameEngine;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Command"/> class.
+        /// </summary>
+        /// <param name="gameEngine">The specific GameEngine</param>
         protected Command(IGameEngine gameEngine)
         {
             this.gameEngine = gameEngine;
         }
 
+        /// <summary>
+        /// Abstract method to execute the given command
+        /// </summary>
+        /// <returns>commandResult string</returns>
         public abstract string Execute();
     }
 }

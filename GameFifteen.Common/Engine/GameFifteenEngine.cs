@@ -13,6 +13,9 @@ namespace GameFifteen.Common.Engine
     using GameFifteen.Common;
     using GameFifteen.Common.Engine.Factories;
 
+    /// <summary>
+    /// The current game engine
+    /// </summary>
     public class GameFifteenEngine : IGameEngine
     {
         // All possible directions for moving the cells
@@ -54,6 +57,11 @@ namespace GameFifteen.Common.Engine
                    0 <= col && col < this.field.Columns;
         }
 
+        /// <summary>
+        /// Checks destination and returns the next direction
+        /// </summary>
+        /// <param name="destination">Destination cell</param>
+        /// <returns>The next direction</returns>
         private int GetNextDirection(string destination)
         {
             int swapNumber;
@@ -92,6 +100,11 @@ namespace GameFifteen.Common.Engine
             this.emptyCellColumn = newCol;
         }
 
+        /// <summary>
+        /// Returns the string representation of a digit
+        /// </summary>
+        /// <param name="number">An integer between 0 and 9.</param>
+        /// <returns>The string representation of the digit</returns>
         private string GetNumberAsString(int number)
         {
             if (number == this.emptyCellValue)
@@ -111,6 +124,7 @@ namespace GameFifteen.Common.Engine
         /// <summary>
         /// Restarts the game and initializes the field.
         /// </summary>
+        /// <returns>The string representation of the resulting command.</returns>
         public virtual string Restart()
         {
             this.InitializeField();
@@ -124,11 +138,19 @@ namespace GameFifteen.Common.Engine
             return commandResult.ToString();
         }
 
+        /// <summary>
+        /// Displays the Exit message.
+        /// </summary>
+        /// <returns>Displays the exit message.</returns>
         public virtual string Exit()
         {
             return GlobalConstants.ExitMessage;
         }
 
+        /// <summary>
+        /// Display the scoreboard
+        /// </summary>
+        /// <returns>Calls the GetScoreboard method</returns>
         public virtual string Top()
         {
             return this.GetScoreboard();

@@ -1,21 +1,39 @@
+//-----------------------------------------------------------------------
+// <copyright file="IGameEngine.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//--------------------------------------------------------------------
+
 namespace GameFifteen.Common.Contracts.Engine
 {
     using System;
 
+    /// <summary>
+    /// GameEngine interface
+    /// </summary>
     public interface IGameEngine
     {
         /// <summary>
-        /// Get player moves count
+        /// Gets player moves count
         /// </summary>
         int PlayerMoves { get; }
 
         /// <summary>
-        /// Restarts the game and initializes the field.
+        /// Restarts the game and initializes the field
         /// </summary>
+        /// <returns>commandResult string</returns>
         string Restart();
 
+        /// <summary>
+        /// Displays exit message on the console
+        /// </summary>
+        /// <returns>Exit message</returns>
         string Exit();
 
+        /// <summary>
+        /// Displays the scoreboard
+        /// </summary>
+        /// <returns>The scoreboard</returns>
         string Top();
 
         /// <summary>

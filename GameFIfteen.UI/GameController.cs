@@ -1,4 +1,10 @@
-﻿namespace GameFifteen.UI
+﻿//-----------------------------------------------------------------------
+// <copyright file="GameController.cs" company="TeamSupreme">
+//     Copyright TeamSupreme. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+namespace GameFifteen.UI
 {
     using System;
     using System.Linq;
@@ -6,6 +12,9 @@
     using GameFifteen.Common.Contracts.Engine;
     using GameFifteen.Common.Engine;
     
+    /// <summary>
+    /// Controller class for the game
+    /// </summary>
     internal class GameController : IGameController
     {
         private readonly IGameEngine gameEngine;
@@ -22,6 +31,9 @@
             this.currentCmd = null;
         }
 
+        /// <summary>
+        /// Displays the win message and logs the player score
+        /// </summary>
         private void FinishGame()
         {
             var output = new StringBuilder();
@@ -34,6 +46,9 @@
             this.gameEngine.SavePlayerScore(playerName, this.gameEngine.PlayerMoves);
         }
 
+        /// <summary>
+        /// Starts a new game
+        /// </summary>
         public void Start()
         {
             this.renderer.Output(this.gameEngine.Restart());
@@ -55,7 +70,12 @@
 
             this.renderer.Output(Environment.NewLine);
         }
- 
+        
+        /// <summary>
+        /// Executes a given command
+        /// </summary>
+        /// <param name="userInput">Input command from the user</param>
+        /// <returns>Executes the corresponding command</returns>
         public virtual string ExecuteCommand(string userInput)
         {
             switch (userInput)
