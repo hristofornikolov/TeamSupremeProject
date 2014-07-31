@@ -25,8 +25,8 @@ namespace GameFifteen.Common.Engine
         public const string ExitMessage = "Good bye!";
 
         // 2, 2 is for testing purposes only
-        public const int FieldMinimumShuffles = 2;
-        public const int FieldMaximumShuffles = 2; 
+        public const int FieldMinimumShuffles = 20;
+        public const int FieldMaximumShuffles = 30; 
 
         public const string ScoreboardTitle = "Scoreboard:";
         public const string ScoreboardView = "{0}. {1} --> {2} moves";

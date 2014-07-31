@@ -5,6 +5,7 @@
 //-----------------------------------------------------------------------
 namespace GameFifteen.Common
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using GameFifteen.Common.Contracts;
@@ -46,7 +47,12 @@ namespace GameFifteen.Common
         /// <param name="player">The player which we want to add to the scoreboard</param>
         public void AddPlayer(IPlayer player)
         {
-            this.CheckIfScoreboardIsActive();
+            if (player == null)
+            {
+                throw new ArgumentException("Scoreboard player cannot be null.");
+            }
+
+            this.CheckIfScoreboardIsActive();       
 
             this.realScoreboard.AddPlayer(player);
             if (this.realScoreboard.Players.Count > GlobalConstants.ScoreboardTopPlayersCount)
